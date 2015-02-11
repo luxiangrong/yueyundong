@@ -1,92 +1,50 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+$body-bg: #393939 !default;
 // bower:scss
-@import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
-
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
-
-/* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
-}
-
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
-
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-  p + h4 {
-    margin-top: 28px;
-  }
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+$header-color: #999999;
+header {
+    &#header {
+        font-size: 85.7%;
+        .navbar-brand {
+            padding-bottom: 21px;
+        }
+        .navbar-default {
+            background: none;
+            border: 0px;
+            border-radius: 0px;
+            .navbar-nav {
+                & > li {
+                    a {
+                        color: $header-color;
+                        padding-top: 19px;
+                        padding-bottom: 19px;
+                        &:hover {
+                            color: lighten($header-color, 15%)
+                        }
+                    }
+                }
+            }
+            .navbar-text {
+                color: $header-color;
+                margin-top: 20px;
+                margin-bottom: 19px;
+            }
+        }
+        .divider-vertical {
+            border-left: 1px solid #2e2e2e;
+            border-right: 1px solid #484848;
+            height: 56px;
+        }
+        .member-count {
+            span {
+              margin-right: 10px;
+            }
+            strong {
+                color: #e39300;
+                margin-right: 5px;
+            }
+        }
+    }
 }
