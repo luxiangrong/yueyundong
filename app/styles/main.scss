@@ -5,6 +5,8 @@ $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $body-bg: #393939 !default;
 $main-bg: #f9f9f7;
+$border-color: #dfdfdf;
+$toolbar-color: #5b5b5b;
 @import "iconfont.scss";
 
 // bower:scss
@@ -17,6 +19,18 @@ html {
 
 body {
     height: 100%;
+}
+
+.browsehappy {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    color: #ffffff;
+    background: #e39300;
+    margin: 0;
+    padding: 5px;
+    z-index: 100;
 }
 
 $header-color: #999999;
@@ -37,7 +51,7 @@ header {
                         padding-top: 19px;
                         padding-bottom: 19px;
                         &:hover {
-                            color: lighten($header-color, 15%)
+                            color: lighten($header-color, 15%);
                         }
                     }
                 }
@@ -72,18 +86,26 @@ header {
     bottom: 0;
     left: 0;
     right: 0;
+
 }
 
 .col-side {
-    @include make-xs-column(2, 0);
+    float: left;
     width: 227px;
     height: 100%;
+    margin-right: -100%;
+    background-color: $body-bg;
 }
 
 .col-main {
-    margin-left: 227px;
-    background-color: $main-bg;
+    float: left;
+    width: 100%;
     height: 100%;
+    .col-main-inner {
+        margin-left: 227px;
+        background-color: $main-bg;
+        height: 100%;
+    }
 }
 
 #side-menu {
@@ -104,10 +126,27 @@ header {
     }
 }
 
-.title-toolbar {
+.toolbar-top {
+    line-height: 63px;
+    border-bottom: 1px solid $border-color;
+    padding-left: 15px;
+    .title {
+        color: $toolbar-color;
+        font-size: $font-size-large;
+        float: left;
+    }
     .navbar-nav {
-        &.navbar-right {
-            &:last-child {
+        > li {
+            &:hover,
+            &.active {
+                > a {
+                    color: lighten($toolbar-color, 15%);
+                }
+            }
+            > a {
+                color: $toolbar-color;
+                padding-top: 22px;
+                padding-bottom: 22px;
             }
         }
     }
