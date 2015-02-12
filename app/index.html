@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>yueyundong</title>
+    <title>00-管理首页-07首页-01</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -11,9 +11,10 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <!-- endbower -->
+    <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="bower_components/art-dialog/css/ui-dialog.css">
     <!-- endbuild -->
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
@@ -27,26 +28,88 @@
     <![endif]-->
 
     <header id="header">
-      
         <nav class="navbar navbar-default ">
-          <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#"><img src="images/logo.png" /></a>
-          </div>
-          <div class="navbar-text member-count">
-            <span>会员：<strong>15369</strong>名</span>
-            <span>教练：<strong>15369</strong>名</span>
-          </div>
-          <ul class="nav navbar-nav navbar-right">
-            <li><p class="navbar-text">今天是 星期二，2014年05月27日</p></li>
-            <li class="divider-vertical"></li>
-            <li><a href="#">张三</a></li>
-            <li><a href="#">退出</a></li>
-          </ul>
-          </div>
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"><img src="images/logo.png" />
+                    </a>
+                </div>
+                <div class="navbar-text member-count">
+                    <span>会员：<strong>15369</strong>名</span>
+                    <span>教练：<strong>15369</strong>名</span>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <p class="navbar-text">今天是 星期二，2014年05月27日</p>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="#">张三</a>
+                    </li>
+                    <li><a href="#">退出</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
-      
     </header>
+
+    <section id="content" class="wrap-all">
+        <div class="col-side">
+            <nav id="side-menu">
+                <ul class="nav">
+                    <li class="active">
+                        <a href="#"><i class="iconfont icon-shouye"></i>管理首页</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-rili"></i>预约日历</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-huiyuan2"></i>会员管理</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-kecheng"></i>课程管理</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-weibiaoti5"></i>教练管理</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-rili"></i>圈子管理</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-tiyanfuwu"></i>微体验</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-baobiao"></i>统计报表</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-shezhi"></i>账户设置</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-main">
+            <div class="top-toolbar">
+                
+            </div>
+
+            <!-- <nav class="navbar title-toolbar">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#"><i class="iconfont icon-shouye"></i>管理首页
+                        </a>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><i class="iconfont icon-plus"></i>新增预约</a>
+                        </li>
+                        <li><a href="#"><i class="iconfont icon-tianjiashangjia"></i>邀请会员加入</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav> -->
+            <div>a</div>
+            <div>b</div>
+        </div>
+
+    </section>
 
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -66,6 +129,7 @@
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
     <script src="bower_components/respondJS/dest/respond.src.js"></script>
     <!-- endbower -->
+    <script src="bower_components/art-dialog/dist/dialog.js"></script>
     <!-- endbuild -->
 
     <!-- build:js({app,.tmp}) scripts/main.js -->

@@ -1,8 +1,24 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+$font-family-sans-serif:  "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", Arial, sans-serif !default;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $body-bg: #393939 !default;
+$main-bg: #f9f9f7;
+@import "iconfont.scss";
+
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
 $header-color: #999999;
 header {
     &#header {
@@ -44,6 +60,54 @@ header {
             strong {
                 color: #e39300;
                 margin-right: 5px;
+            }
+        }
+    }
+}
+
+.wrap-all {
+    width: 100%;
+    position: absolute;
+    top: 56px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.col-side {
+    @include make-xs-column(2, 0);
+    width: 227px;
+    height: 100%;
+}
+
+.col-main {
+    margin-left: 227px;
+    background-color: $main-bg;
+    height: 100%;
+}
+
+#side-menu {
+    .nav {
+        > li {
+            &:hover,
+            &.active {
+                > a {
+                    color: #e39300;
+                    background-color: #434343;
+                }
+            }
+            > a {
+                padding: 15px 20px;
+                color: #bebebe;
+            }
+        }
+    }
+}
+
+.title-toolbar {
+    .navbar-nav {
+        &.navbar-right {
+            &:last-child {
             }
         }
     }
