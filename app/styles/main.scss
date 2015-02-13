@@ -30,6 +30,26 @@ body {
     padding: 5px;
     z-index: 100;
 }
+.btn-warning {
+    background-color: #e39300;
+}
+.btn-black {
+    background-color: #2c2c2c;
+    border-color: lighter(#2c2c2c, 5%);
+    color: #fff; 
+    &:hover,
+    &.action {
+        background-color: lighter(#2c2c2c, 15%);
+        border-color: lighter(#2c2c2c, 25%);
+        color:  darken(#fff, 15%);
+    }
+}
+
+/*
+**--------------------------
+** 头部样式 Start
+**-------------------------- 
+*/
 $header-color: #999999;
 header {
     &#header {
@@ -75,6 +95,17 @@ header {
         }
     }
 }
+/*
+**--------------------------
+** 头部样式 End
+**-------------------------- 
+*/
+/*
+**--------------------------
+** 整体框架布局 Start
+**-------------------------- 
+*/
+
 .wrap-all {
     width: 100%;
     position: absolute;
@@ -100,6 +131,17 @@ header {
         height: 100%;
     }
 }
+/*
+**--------------------------
+** 整体框架布局 End
+**-------------------------- 
+*/
+/*
+**--------------------------
+** 左侧菜单栏 Start
+**-------------------------- 
+*/
+
 #side-menu {
     .nav {
         > li {
@@ -116,6 +158,17 @@ header {
         }
     }
 }
+/*
+**--------------------------
+** 左侧菜单栏 End
+**-------------------------- 
+*/
+/*
+**--------------------------
+** 顶部的工具栏样式 Start
+**-------------------------- 
+*/
+
 .toolbar-top {
     line-height: 63px;
     border-bottom: 1px solid $border-color;
@@ -124,6 +177,11 @@ header {
         color: $toolbar-color;
         font-size: $font-size-large;
         float: left;
+        small {
+            margin-left: 50px;
+            color: #999999;
+            font-size: $font-size-small;
+        }
     }
     .navbar-nav {
         > li {
@@ -140,9 +198,21 @@ header {
         }
     }
 }
+/*
+**--------------------------
+** 顶部的工具栏样式 End
+**-------------------------- 
+*/
+/*
+**--------------------------
+** 内容区域样式 Start
+**-------------------------- 
+*/
+
 .content-box {
-    overflow-y: scroll;
+    overflow-y: auto;
     .content-box-inner {
+        min-height: 80%;
         margin: 20px;
         padding: 30px;
         border: 1px solid $border-color;
@@ -151,7 +221,19 @@ header {
         margin-bottom: 20px;
     }
 }
-.nav-tabs {
+/*
+**--------------------------
+** 内容区域样式 End
+**-------------------------- 
+*/
+/*
+**--------------------------
+** 自定义风格为a的navtabs Start
+**-------------------------- 
+*/
+
+.nav-tabs-a {
+    margin-bottom: 20px;
     > li {
         font-size: ceil(($font-size-base * 1.14));
         > a {
@@ -177,6 +259,31 @@ header {
         }
     }
 }
+/*自定义风格为b的navtabs*/
+
+.nav-tabs-b {
+    margin-bottom: 20px;
+    > li {
+        font-size: ceil(($font-size-base * 1.14));
+        > a {
+            color: lighten($tab-active-color, 30%);
+            background-color: transparent;
+            border: 1px solid $border-color;
+            &:hover {
+                background-color: transparent;
+            }
+        }
+        // Active state, and its :hover to override normal :hover
+        &.active > a {
+            &, &:hover, &:focus {
+                color: #e39300;
+                background-color: #f2f2ea;
+                cursor: default;
+            }
+        }
+    }
+}
+/*概览信息显示区*/
 
 .badge-list {
     margin: 0;
@@ -222,10 +329,10 @@ header {
         }
     }
 }
+/*定义了默认table的样式*/
 
 .table-default {
-    > tbody, 
-    > thead {
+    > tbody, > thead {
         > tr {
             > td {
                 vertical-align: middle;
@@ -241,3 +348,176 @@ header {
         }
     }
 }
+/* 自定义artDialog的样式*/
+/*
+**--------------------------
+** 自定义artDialog的样式
+**-------------------------- 
+*/
+.ui-dialog {
+    &.skin-popup {
+        border: 1px solid #1c86cf;
+        font-family: inherit;
+        .ui-dialog-title {
+            font-weight: normal;
+        }
+        .ui-dialog-arrow-a {
+            border-bottom: 8px solid #1c86cf;
+        }
+        .ui-dialog-footer {
+            button {
+                border-radius: 3px;
+                padding-left: 30px;
+                padding-right: 30px;
+                &.ui-dialog-autofocus {
+                    background-color: #e39300;
+                    border-color: lighten(#e39300, 15%);
+                }
+            }
+        }
+    }
+    &.skin-processing {
+        font-family: inherit;
+        background-color: transparent;
+        color: #fff;
+        border: none;
+        box-shadow: none;
+    }
+    &.skin-result {
+        font-family: inherit;
+        background-color: transparent;
+        color: #fff;
+        border: none;
+        box-shadow: none;
+        .ui-dialog-header {
+            border-bottom: none;
+        }
+        .ui-dialog-close {
+            color: #fff;
+            opacity: 0.5;
+        }
+    }
+}
+/*新增预约弹出框*/
+
+.dialog-new-reservation {
+    display: none;
+    width: 258px;
+    .iconfont {
+        color: #666;
+        font-weight: 500;
+    }
+    h5 {
+        margin-top: 0;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        margin-bottom: 10px;
+        padding-left: 25px;
+        li {
+            display: inline-block;
+            margin-right: 5px;
+            .iconfont {
+                color: #1c86cf;
+                font-size: $font-size-small;
+                margin-left: 5px;
+                vertical-align: text-top;
+            }
+        }
+    }
+    .form-group {
+        margin-top: 10px;
+        .datetimepicker {
+            margin-left: 5px;
+            width: 220px;
+        }
+    }
+}
+/*新增用户弹出框*/
+
+.dialog-add-member {
+    display: none;
+    width: 258px;
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            display: inline-block;
+            margin-right: 5px;
+        }
+    }
+}
+/*新增课程弹出框*/
+
+.dialog-add-course {
+    display: none;
+    width: 258px;
+    .checkbox {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    p {
+        .iconfont {
+            font-size: $font-size-small;
+            vertical-align: text-top;
+        }
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.dialog-import-bath-result {
+    display: none;
+    width: 400px;
+    text-align: center;
+    p {
+        line-height: 2;
+    }
+    strong {
+        font-size: ceil(($font-size-base * 1.7));
+        color: #e39300;
+    }
+    div {
+        margin-top: 20px;
+    }
+}
+
+/*
+**--------------------------
+** 数据导入页面的样式 Start
+**-------------------------- 
+*/
+
+.import-single {
+    label {
+        font-weight: normal;
+        margin-left: 20px;
+        &.more {
+            a {
+                text-decoration: none;
+            }
+        }
+        display: inline;
+    }
+    .block {
+        @include clearfix();
+        display: block;
+        margin: 20px 0 0 50px;
+    }
+    .form-group {
+        margin-top: 10px;
+    }
+}
+.import-batch {
+    p {
+        margin-top: 20px;
+    }
+}
+/*
+**--------------------------
+** 数据导入页面的样式 End
+**-------------------------- 
+*/
