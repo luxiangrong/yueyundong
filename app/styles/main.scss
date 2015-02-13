@@ -1,26 +1,23 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
-$font-family-sans-serif:  "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", Arial, sans-serif !default;
-$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+$font-family-sans-serif: "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", Arial, sans-serif !default;
+$font-family-serif: Georgia, "Times New Roman", Times, serif !default;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
-$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $body-bg: #393939 !default;
 $main-bg: #f9f9f7;
 $border-color: #dfdfdf;
 $toolbar-color: #5b5b5b;
+$tab-active-color: #333333;
 @import "iconfont.scss";
-
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
-
 html {
     height: 100%;
 }
-
 body {
     height: 100%;
 }
-
 .browsehappy {
     position: fixed;
     left: 0px;
@@ -32,7 +29,6 @@ body {
     padding: 5px;
     z-index: 100;
 }
-
 $header-color: #999999;
 header {
     &#header {
@@ -69,7 +65,7 @@ header {
         }
         .member-count {
             span {
-              margin-right: 10px;
+                margin-right: 10px;
             }
             strong {
                 color: #e39300;
@@ -78,7 +74,6 @@ header {
         }
     }
 }
-
 .wrap-all {
     width: 100%;
     position: absolute;
@@ -86,9 +81,7 @@ header {
     bottom: 0;
     left: 0;
     right: 0;
-
 }
-
 .col-side {
     float: left;
     width: 227px;
@@ -96,7 +89,6 @@ header {
     margin-right: -100%;
     background-color: $body-bg;
 }
-
 .col-main {
     float: left;
     width: 100%;
@@ -107,12 +99,10 @@ header {
         height: 100%;
     }
 }
-
 #side-menu {
     .nav {
         > li {
-            &:hover,
-            &.active {
+            &:hover, &.active {
                 > a {
                     color: #e39300;
                     background-color: #434343;
@@ -125,7 +115,6 @@ header {
         }
     }
 }
-
 .toolbar-top {
     line-height: 63px;
     border-bottom: 1px solid $border-color;
@@ -137,8 +126,7 @@ header {
     }
     .navbar-nav {
         > li {
-            &:hover,
-            &.active {
+            &:hover, &.active {
                 > a {
                     color: lighten($toolbar-color, 15%);
                 }
@@ -147,6 +135,107 @@ header {
                 color: $toolbar-color;
                 padding-top: 22px;
                 padding-bottom: 22px;
+            }
+        }
+    }
+}
+.content-box {
+    overflow-y: scroll;
+    .content-box-inner {
+        margin: 20px;
+        padding: 30px;
+        border: 1px solid $border-color;
+    }
+    .action-group {
+        margin-bottom: 20px;
+    }
+}
+.nav-tabs {
+    > li {
+        font-size: ceil(($font-size-base * 1.14));
+        > a {
+            color: lighten($tab-active-color, 30%);
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid $border-color;
+            &:hover {
+                background-color: transparent;
+                border-color: lighten(#cc8400, 30%);
+            }
+        }
+        // Active state, and its :hover to override normal :hover
+        &.active > a {
+            &, &:hover, &:focus {
+                color: $tab-active-color;
+                border: none;
+                background-color: transparent;
+                color: $tab-active-color;
+                border-bottom: 2px solid #cc8400;
+                cursor: default;
+            }
+        }
+    }
+}
+
+.badge-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    li {
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        h4 {
+            font-size: ceil(($font-size-base * 1.14));
+        }
+        > span {
+            border-radius: 8px;
+            color: #fff;
+            display: block;
+            width: 100px;
+            line-height: 100px;
+            margin: 0 30px;
+            font-size: ceil(($font-size-base * 2.857));
+        }
+        &.badge-a {
+            > span {
+                background-color: #7dafec;
+            }
+        }
+        &.badge-b {
+            > span {
+                background-color: #87b33e;
+            }
+        }
+        &.badge-c {
+            > span {
+                background-color: #f7af4a;
+            }
+        }
+        &.badge-d {
+            > span {
+                background-color: #f37a54;
+            }
+        }
+    }
+}
+
+.table-default {
+    > tbody, 
+    > thead {
+        > tr {
+            > td {
+                vertical-align: middle;
+                padding: 10px;
+            }
+        }
+    }
+    > thead {
+        > tr {
+            > th {
+                background-color: #f0f0f0;
             }
         }
     }
