@@ -7,6 +7,7 @@
             var toolBarTopHeight = $(".toolbar-top").height();
             var marginHeight = $(".content-box").outerHeight(true) - $(".content-box").height();
             $(".content-box").height(colMainHeight - toolBarTopHeight - marginHeight - 2);
+            $(".slide-box").height(colMainHeight - 2);
         };
 
         calcContentBox();
@@ -45,7 +46,7 @@
                 title: '用户增加',
                 content: $("#dialog-add-member"),
                 quickClose: false, // 点击空白处快速关闭
-                skin: 'skin-popup',
+                skin: 'skin-popup'
             });
             d.show(this);
         });
@@ -56,7 +57,7 @@
                 title: '选择课程',
                 content: $("#dialog-add-course"),
                 quickClose: false, // 点击空白处快速关闭
-                skin: 'skin-popup',
+                skin: 'skin-popup'
             });
             d.show(this);
         });
@@ -81,19 +82,61 @@
             var d = dialog({
                 content: "数据存储中，请稍后...",
                 padding: 0,
-                skin: 'skin-processing',
+                skin: 'skin-processing'
             });
             d.showModal();
             //这里模拟2秒钟后处理完成，关闭显示,并触发处理结果的对话框
             setTimeout(function() {
                 d.close().remove();
                 var d2 = dialog({
-                    title: ' ', 
+                    title: ' ',
                     content: $("#dialog-import-bath-result"),
-                    skin: 'skin-result',
+                    skin: 'skin-result'
                 });
                 d2.showModal();
             }, 2000);
         });
+
+        /*
+         **--------------------------
+         ** 打开和关闭右侧的滑出框
+         **--------------------------
+         */
+        function openSlideBox(slideBox) {
+            $(slideBox).width(700);
+        }
+
+        function closeSlideBox(slideBox) {
+                $(slideBox).width(0);
+            }
+            //打开右侧的滑出框，这里假设由点击表格内的行来触发，右侧弹出框的打开
+        $("#reservation-data").find("tbody tr").on("click", function() {
+            //找到相应的右侧滑出框，并打开它
+            var slideBox = $("#reservation-detail");
+            openSlideBox(slideBox);
+        });
+        $(".btn-slide-close").on("click", function() {
+            var slideBox = $(this).closest(".slide-box");
+            closeSlideBox(slideBox);
+        });
+
+
+        /*
+         **--------------------------
+         ** 初始化日历插件
+         **--------------------------
+         */
+        $('#reservation-calendar').fullCalendar({
+            header: {
+                // center: 'prev,next today',
+                // center: 'title',
+                // left: 'title'
+                //right: 'month,agendaWeek,agendaDay'
+                //right: 'month'
+                left: '',
+                center: '',
+                right: ''
+            }
+        })
     });
 })(jQuery);

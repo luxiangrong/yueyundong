@@ -8,6 +8,7 @@ $main-bg: #f9f9f7;
 $border-color: #dfdfdf;
 $toolbar-color: #5b5b5b;
 $tab-active-color: #333333;
+$table-bg-hover: #f0f0f0;
 @import "iconfont.scss";
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
@@ -36,20 +37,19 @@ body {
 .btn-black {
     background-color: #2c2c2c;
     border-color: lighter(#2c2c2c, 5%);
-    color: #fff; 
-    &:hover,
-    &.action {
+    color: #fff;
+    &:hover, &.action {
         background-color: lighter(#2c2c2c, 15%);
         border-color: lighter(#2c2c2c, 25%);
-        color:  darken(#fff, 15%);
+        color: darken(#fff, 15%);
     }
 }
-
 /*
 **--------------------------
 ** 头部样式 Start
 **-------------------------- 
 */
+
 $header-color: #999999;
 header {
     &#header {
@@ -113,22 +113,40 @@ header {
     bottom: 0;
     left: 0;
     right: 0;
-}
-.col-side {
-    float: left;
-    width: 227px;
-    height: 100%;
-    margin-right: -100%;
-    background-color: $body-bg;
-}
-.col-main {
-    float: left;
-    width: 100%;
-    height: 100%;
-    .col-main-inner {
-        margin-left: 227px;
-        background-color: $main-bg;
+    background-color: $main-bg;
+    .col-side {
+        float: left;
+        width: 227px;
         height: 100%;
+        margin-right: -100%;
+        background-color: $body-bg;
+    }
+    .col-main {
+        float: left;
+        width: 100%;
+        height: 100%;
+        .col-main-inner {
+            margin-left: 227px;
+            background-color: $main-bg;
+            height: 100%;
+        }
+    }
+    &.col-3 {
+        .col-main {
+            float: left;
+            width: 90%;
+            height: 100%;
+            .col-main-inner {
+                margin-left: 227px;
+                background-color: $main-bg;
+                height: 100%;
+            }
+        }
+        .col-extend {
+            float: left;
+            width: 10%;
+            height: 100%;
+        }
     }
 }
 /*
@@ -173,6 +191,8 @@ header {
     line-height: 63px;
     border-bottom: 1px solid $border-color;
     padding-left: 15px;
+    text-align: center;
+    @include clearfix();
     .title {
         color: $toolbar-color;
         font-size: $font-size-large;
@@ -183,7 +203,20 @@ header {
             font-size: $font-size-small;
         }
     }
+    .title-center {
+        display: inline-block;
+        strong {
+            font-weight: normal;
+            margin: 0 20px;
+            font-size: $font-size-large;
+        }
+    }
     .navbar-nav {
+        &.navbar-right {
+            &:last-child {
+                margin-right: 0;
+            }
+        }
         > li {
             &:hover, &.active {
                 > a {
@@ -233,7 +266,7 @@ header {
 */
 
 .nav-tabs-a {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     > li {
         font-size: ceil(($font-size-base * 1.14));
         > a {
@@ -289,8 +322,8 @@ header {
     margin: 0;
     padding: 0;
     list-style: none;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     li {
         display: inline-block;
         text-align: center;
@@ -334,9 +367,11 @@ header {
 .table-default {
     > tbody, > thead {
         > tr {
-            > td {
+            > td, > th {
+                cursor: pointer;
                 vertical-align: middle;
-                padding: 10px;
+                padding-top: 14px;
+                padding-bottom: 14px;
             }
         }
     }
@@ -348,12 +383,22 @@ header {
         }
     }
 }
+.table-no-border {
+    > tbody, > thead {
+        > tr {
+            > td, > th {
+                border: none;
+            }
+        }
+    }
+}
 /* 自定义artDialog的样式*/
 /*
 **--------------------------
 ** 自定义artDialog的样式
 **-------------------------- 
 */
+
 .ui-dialog {
     &.skin-popup {
         border: 1px solid #1c86cf;
@@ -468,7 +513,6 @@ header {
         }
     }
 }
-
 .dialog-import-bath-result {
     display: none;
     width: 400px;
@@ -484,7 +528,6 @@ header {
         margin-top: 20px;
     }
 }
-
 /*
 **--------------------------
 ** 数据导入页面的样式 Start
@@ -521,3 +564,71 @@ header {
 ** 数据导入页面的样式 End
 **-------------------------- 
 */
+/*
+**--------------------------
+** 右侧滑出窗口样式 End
+**-------------------------- 
+*/
+
+.slide-box {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: $main-bg;
+    overflow: hidden;
+    transition: width .5s;
+    .toolbar-top {
+        width: 700px;
+        font-size: $font-size-small;
+        .title {
+            font-size: $font-size-base;
+            .iconfont {
+                color: #1c86cf;
+            }
+        }
+    }
+    border-left: 1px solid $border-color;
+    box-shadow: -2px 0 5px 0 $border-color;
+    .container {
+        width: 685px;
+        padding: 0 30px;
+        .row {
+            padding: 20px 0;
+            border-bottom: 1px dotted $border-color;
+        }
+    }
+    dl {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 10px;
+        dt, dd {
+            display: inline;
+        }
+        dt {
+            font-weight: normal;
+            text-align: right;
+        }
+        dd {
+            color: #666666;
+        }
+    }
+    .stat {
+        dl {
+            dt {
+                display: inline-block;
+                width: 200px;
+            }
+        }
+    }
+    .member-info {
+        dl {
+            dt {
+                display: inline-block;
+                width: 6em;
+            }
+        }
+    }
+    table {
+        margin-bottom: 0;
+    }
+}

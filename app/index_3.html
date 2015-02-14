@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>00-管理首页-07首页-01</title>
+    <title>00-管理首页-07首页-04弹出</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -101,43 +101,24 @@
                             <a href="#"><i class="iconfont icon-tianjiashangjia"></i>邀请会员加入</a>
                         </li>
                     </ul>
-                    <div style="clear:both"></div>
                 </div>
                 <div class="content-box">
                     <div class="content-box-inner">
                         <ul class="nav nav-tabs nav-tabs-a">
-                            <li class="active"><a href="#">今日预约</a>
+                            <li><a href="#">今日预约</a>
                             </li>
-                            <li><a href="#">未来三天预约</a>
+                            <li class="active"><a href="#">未来三天预约</a>
                             </li>
                             <li><a href="#">未来一周预约</a>
                             </li>
                             <li><a href="#">全部预约</a>
                             </li>
                         </ul>
-                        <ul class="badge-list">
-                            <li class="badge-a">
-                                <span>17</span>
-                                <h4>未确认预约</h4>
-                            </li>
-                            <li class="badge-b">
-                                <span>500</span>
-                                <h4>会员收到邀请</h4>
-                            </li>
-                            <li class="badge-c">
-                                <span>102</span>
-                                <h4>用户手机绑定</h4>
-                            </li>
-                            <li class="badge-d">
-                                <span>584</span>
-                                <h4>新用户申请体验课</h4>
-                            </li>
-                        </ul>
                         <div class="action-group">
                             <button class="btn btn-warning">预约确认</button>
                             <button class="btn btn-default">驳回预约</button>
                         </div>
-                        <table class="table table-hover table-default">
+                        <table id="reservation-data" class="table table-hover table-default">
                             <thead>
                                 <tr>
                                     <th>
@@ -283,95 +264,168 @@
                         </table>
                     </div>
                 </div>
+                <div class="slide-box" id="reservation-detail">
+                    <div class="toolbar-top">
+                        <div class="title">
+                            <i class="iconfont icon-shouye"></i>预约详细信息
+                        </div>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a id="" href="#"><i class="iconfont icon-yibudaochu"></i>导出</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="iconfont icon-dayin"></i>打印</a>
+                            </li>
+                            <li>
+                                <a class="btn-slide-close" href="#"><i class="iconfont icon-guanbi"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-5 ">
+                                <dl>
+                                    <dt>会&emsp;&emsp;员：</dt>
+                                    <dd>张立彬</dd>
+                                </dl>
+                                <dl>
+                                    <dt>预约课程：</dt>
+                                    <dd>张立彬</dd>
+                                </dl>
+                                <dl>
+                                    <dt>申请时间：</dt>
+                                    <dd>张立彬</dd>
+                                </dl>
+                            </div>
+                            <div class="col-xs-7">
+                                <dl>
+                                    <dt>卡&emsp;&emsp;&emsp;号：</dt>
+                                    <dd>5646564621323132</dd>
+                                </dl>
+                                <dl>
+                                    <dt>预约时间段：</dt>
+                                    <dd>2015-05-05 9:00-12:00</dd>
+                                </dl>
+                                <dl>
+                                    <dt>预&emsp;约&emsp;号：</dt>
+                                    <dd>1545121212</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="row stat">
+                            <div class="col-xs-6">
+                                <img src="images/chart_01.jpg" />
+                            </div>
+                            <div class="col-xs-6">
+                                <dl>
+                                    <dt>每次健身的平均时长：</dt>
+                                    <dd>1小时30分</dd>
+                                </dl>
+                                <dl>
+                                    <dt>2014-10-12日锻炼时长：</dt>
+                                    <dd>1小时30分</dd>
+                                </dl>
+                                <dl>
+                                    <dt>2014-10月进馆次数最多：</dt>
+                                    <dd>1小时30分</dd>
+                                </dl>
+                                <dl>
+                                    <dt>本月预约：</dt>
+                                    <dd>48</dd>
+                                </dl>
+                                <dl>
+                                    <dt>总预约：</dt>
+                                    <dd>5454</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <table class="table table-condensed table-no-border">
+                                    <tbody>
+                                        <tr>
+                                            <td>2012-11-15</td>
+                                            <td>预约</td>
+                                            <td>李欣</td>
+                                            <td>普拉提课程</td>
+                                            <td>2014-12-20 9:00 - 10:00</td>
+                                            <td>预约号</td>
+                                            <td>14121210001</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2012-11-15</td>
+                                            <td>预约</td>
+                                            <td>李欣</td>
+                                            <td>普拉提课程</td>
+                                            <td>2014-12-20 9:00 - 10:00</td>
+                                            <td>预约号</td>
+                                            <td>14121210001</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2012-11-15</td>
+                                            <td>预约</td>
+                                            <td>李欣</td>
+                                            <td>普拉提课程</td>
+                                            <td>2014-12-20 9:00 - 10:00</td>
+                                            <td>预约号</td>
+                                            <td>14121210001</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2012-11-15</td>
+                                            <td>预约</td>
+                                            <td>李欣</td>
+                                            <td>普拉提课程</td>
+                                            <td>2014-12-20 9:00 - 10:00</td>
+                                            <td>预约号</td>
+                                            <td>14121210001</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2012-11-15</td>
+                                            <td>预约</td>
+                                            <td>李欣</td>
+                                            <td>普拉提课程</td>
+                                            <td>2014-12-20 9:00 - 10:00</td>
+                                            <td>预约号</td>
+                                            <td>14121210001</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row member-info">
+                            <div class="col-xs-5 ">
+                                <dl>
+                                    <dt>电子邮件：</dt>
+                                    <dd>nopolon@163.com</dd>
+                                </dl>
+                                <dl>
+                                    <dt>卡类型：</dt>
+                                    <dd>年卡</dd>
+                                </dl>
+                                <dl>
+                                    <dt>会员类型：</dt>
+                                    <dd>高级会员</dd>
+                                </dl>
+                            </div>
+                            <div class="col-xs-7">
+                                <dl>
+                                    <dt>电子邮件：</dt>
+                                    <dd>nopolon@163.com</dd>
+                                </dl>
+                                <dl>
+                                    <dt>卡类型：</dt>
+                                    <dd>年卡</dd>
+                                </dl>
+                                <dl>
+                                    <dt>会员类型：</dt>
+                                    <dd>高级会员</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- 新建预约弹出框内容 -->
-    <div id="dialog-new-reservation" class="dialog-new-reservation">
-        <div class="item">
-            <h5>
-                <i class="iconfont icon-huiyuan"></i><strong>用户</strong>
-            </h5>
-            <ul>
-                <li>张立彬</li>
-                <li>张立彬</li>
-                <li>张立彬</li>
-                <li>张立彬</li>
-                <li>张立彬</li>
-                <li>张立彬</li>
-                <li>张立彬<i class="iconfont icon-plus" id="btn-add-member"></i>
-                </li>
-            </ul>
-        </div>
-        <div class="item">
-            <h5>
-                <i class="iconfont icon-kecheng"></i><strong>选择课程</strong>
-            </h5>
-            <ul>
-                <li><i class="iconfont icon-plus" id="btn-add-course"></i>
-                </li>
-            </ul>
-        </div>
-        <div class="item">
-            <h5>
-                <i class="iconfont icon-weibiaoti5"></i><strong>教练</strong>
-            </h5>
-            <ul>
-                <li><i class="iconfont icon-plus" id="btn-add-coach"></i>
-                </li>
-            </ul>
-        </div>
-        <div class="form-inline">
-            <div class="form-group">
-                <label for="reservation-start-date">开始</label>
-                <input type="text" class="form-control datetimepicker" id="reservation-start-date" placeholder="">
-            </div>
-            <div class="form-group">
-                <label for="reservation-end-date">结束</label>
-                <input type="text" class="form-control datetimepicker" id="reservation-end-date" placeholder="">
-            </div>
-        </div>
-    </div>
-
-    <div id="dialog-add-member" class="dialog-add-member">
-        <div class="form-group">
-            <input type="search" class="form-control" id="" placeholder="搜索">
-        </div>
-        <ul>
-            <li>杨峰</li>
-            <li>杨峰</li>
-            <li>杨峰</li>
-        </ul>
-    </div>
-
-    <div id="dialog-add-course" class="dialog-add-course">
-        <div class="form-inline">
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox"> 李欣普拉提课程
-                </label>
-            </div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox"> 李欣普拉提课程
-                </label>
-            </div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox"> 李欣普拉提课程
-                </label>
-            </div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox"> 李欣普拉提课程
-                </label>
-            </div>
-        </div>
-        <p>
-            <a href="#"><i class="iconfont icon-plus"></i>增加课程</a>
-        </p>
-    </div>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
