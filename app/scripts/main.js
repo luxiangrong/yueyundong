@@ -26,6 +26,7 @@
                 content: $("#dialog-new-reservation"),
                 quickClose: false, // 点击空白处快速关闭
                 skin: 'skin-popup',
+                align: 'bottom right',
                 button: [{
                     value: '确定',
                     callback: function() {
@@ -120,31 +121,101 @@
             var slideBox = $(this).closest(".slide-box");
             closeSlideBox(slideBox);
         });
-        $(window).on("click", function(e){
-            if($(e.target).closest(".slide-box").length > 0) {
+        $(window).on("click", function(e) {
+            if ($(e.target).closest(".slide-box").length > 0) {
                 //在slideBox内部单击时不关闭
             } else {
-                closeSlideBox($(".slide-box"));
+                //TODO: 在滑出窗口中弹出对话框时，有bug
+                //closeSlideBox($(".slide-box"));
             }
-            
+
         });
 
         /*
          **--------------------------
-         ** 初始化日历插件
+         ** 日历插件相关代码
          **--------------------------
          */
-        $('#reservation-calendar').fullCalendar({
-            header: {
-                // center: 'prev,next today',
-                // center: 'title',
-                // left: 'title'
-                //right: 'month,agendaWeek,agendaDay'
-                //right: 'month'
-                left: '',
-                center: '',
-                right: ''
-            }
-        })
+        var reservationCalendar = $('#reservation-calendar').fullCalendar({
+                //控件部分已经自定义，这里不需要默认的头部控件
+                header: {
+                    left: '',
+                    center: '',
+                    right: ''
+                },
+                //用于显示预约事件数据，具体使用方法参考文档：http://fullcalendar.io/docs/
+                eventSources: [{
+                    events: [{
+                        title: '张立彬预约',
+                        start: '2015-02-16',
+                        color: '#6dd749'
+                    }, {
+                        title: '张立彬预约',
+                        start: '2015-02-16',
+                        color: '#3ccf9d'
+                    }, {
+                        title: '张立彬预约',
+                        start: '2015-02-16',
+                        color: '#6dd749',
+                        allDay: false
+                    }],
+                    textColor: '#ffffff'
+                }]
+
+            })
+            //显示上一个月
+        $(".reservation-calendar-control").find("#btn-prev").on("click", function() {
+            $('#reservation-calendar').fullCalendar('prev');
+            $(".reservation-calendar-control").find(".calendar-title").text($('#reservation-calendar').fullCalendar("getView").title);
+        });
+        //显示上一个星期
+        $(".reservation-calendar-control").find("#btn-next").on("click", function() {
+            $('#reservation-calendar').fullCalendar('next');
+            $(".reservation-calendar-control").find(".calendar-title").text($('#reservation-calendar').fullCalendar("getView").title);
+        });
+        //切换成月视图
+        $("#btn-month-view").on("click", function() {
+            $('#reservation-calendar').fullCalendar('changeView', 'month');
+            $(".reservation-calendar-control").find(".calendar-title").text($('#reservation-calendar').fullCalendar("getView").title);
+        });
+        //切换成星期视图
+        $("#btn-week-view").on("click", function() {
+            $('#reservation-calendar').fullCalendar('changeView', 'basicWeek');
+            $(".reservation-calendar-control").find(".calendar-title").text($('#reservation-calendar').fullCalendar("getView").title);
+        });
+
+        //教练预约滑出框
+        $(".coach-list li").on("click", function(e) {
+            //找到相应的右侧滑出框，并打开它
+            e.stopPropagation();
+            var slideBox = $("#reservation-coach-detail");
+            openSlideBox(slideBox);
+        });
+
+        //预约确认
+        $("#btn-reservation-confirm").on("click", function() {
+            var d = dialog({
+                title: '预约确认',
+                content: '确认全部会员预约时间！',
+                align: 'bottom',
+                skin: 'skin-popup skin-confirm',
+                okValue: '确定',
+                ok: function() {
+                }
+            });
+            d.show(this).width(300);
+        });
+        //预约删除
+        $("#btn-reservation-delete").on("click", function() {
+            var d = dialog({
+                title: '确认删除',
+                content: '删除自后，数据不能恢复！',
+                skin: 'skin-popup skin-confirm',
+                okValue: '确定',
+                ok: function() {
+                }
+            });
+            d.show(this).width(300);
+        });
     });
 })(jQuery);

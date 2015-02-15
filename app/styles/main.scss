@@ -146,6 +146,7 @@ header {
             float: left;
             width: 10%;
             height: 100%;
+            border-left: 1px solid $border-color;
         }
     }
 }
@@ -400,6 +401,7 @@ header {
 */
 
 .ui-dialog {
+    //自定义默认弹出窗口样式
     &.skin-popup {
         border: 1px solid #1c86cf;
         font-family: inherit;
@@ -420,7 +422,28 @@ header {
                 }
             }
         }
+        //特殊确认对话框
+        &.skin-confirm {
+            .ui-dialog-header {
+                .ui-dialog-title {
+                    font-size: ceil(($font-size-base * 1.14));
+                }
+            }
+            .ui-dialog-body {
+                .ui-dialog-content {
+                    text-align: center;
+                }
+                
+            }
+            .ui-dialog-footer {
+                text-align: center;
+                .ui-dialog-button {
+                    float: none;
+                }
+            }
+        }
     }
+    //处理中模态提示
     &.skin-processing {
         font-family: inherit;
         background-color: transparent;
@@ -428,6 +451,7 @@ header {
         border: none;
         box-shadow: none;
     }
+    //处理结束模态提示
     &.skin-result {
         font-family: inherit;
         background-color: transparent;
@@ -574,9 +598,11 @@ header {
     position: absolute;
     top: 0px;
     right: 0px;
+    width: 0px;
     background-color: $main-bg;
     overflow: hidden;
     transition: width .5s;
+    z-index: 10;
     .toolbar-top {
         width: 700px;
         font-size: $font-size-small;
@@ -630,5 +656,66 @@ header {
     }
     table {
         margin-bottom: 0;
+    }
+    &.slide-box-coach {
+        .bianji {
+            > a {
+                color: #1c86cf;
+            }
+        }
+        .row {
+            padding-bottom: 10px;
+        }
+        h4 {
+            margin: 5px;
+        }
+        .table-date {
+            font-size: $font-size-small;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            th {
+                color: #666666;
+                font-weight: normal;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                width: 8em;
+                text-align: center;
+            }
+            td {
+                color: #e39300;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                vertical-align: middle;
+            }
+        }
+        .item {
+            margin-left: 25px;
+            span, i {
+                margin-right: 1em;
+            }
+            i {
+                font-style: normal;
+                color: #999999;
+            }
+            .iconfont {
+                color: #1c86cf;
+            }
+        }
+    }
+}
+/*
+**--------------------------
+** 预约日历界面样式 
+**-------------------------- 
+*/
+
+.reservation-calendar-view-switch {
+    margin-right: 20px;
+}
+.coach-list {
+    > li {
+        > a {
+            color: $toolbar-color;
+        }
     }
 }
