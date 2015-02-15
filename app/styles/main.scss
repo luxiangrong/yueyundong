@@ -85,6 +85,7 @@ header {
             height: 56px;
         }
         .member-count {
+            margin-left: 100px;
             span {
                 margin-right: 10px;
             }
@@ -203,6 +204,9 @@ header {
             color: #999999;
             font-size: $font-size-small;
         }
+        .iconfont {
+            font-size: ceil(($font-size-base * 1.42)) ;
+        }
     }
     .title-center {
         display: inline-block;
@@ -228,6 +232,16 @@ header {
                 color: $toolbar-color;
                 padding-top: 22px;
                 padding-bottom: 22px;
+            }
+        }
+    }
+    .navbar-form {
+        margin-top: 0;
+        margin-bottom: 0;
+        .has-feedback {
+            .form-control-feedback {
+                top: 15px;
+                color: #999999;
             }
         }
     }
@@ -391,6 +405,11 @@ header {
                 border: none;
             }
         }
+    }
+}
+.table-member-list {
+    .addition {
+        color: #999;
     }
 }
 /* 自定义artDialog的样式*/
