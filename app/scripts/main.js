@@ -110,8 +110,9 @@
                 $(slideBox).width(0);
             }
             //打开右侧的滑出框，这里假设由点击表格内的行来触发，右侧弹出框的打开
-        $("#reservation-data").find("tbody tr").on("click", function() {
+        $("#reservation-data").find("tbody tr").on("click", function(e) {
             //找到相应的右侧滑出框，并打开它
+            e.stopPropagation();
             var slideBox = $("#reservation-detail");
             openSlideBox(slideBox);
         });
@@ -119,7 +120,14 @@
             var slideBox = $(this).closest(".slide-box");
             closeSlideBox(slideBox);
         });
-
+        $(window).on("click", function(e){
+            if($(e.target).closest(".slide-box").length > 0) {
+                //在slideBox内部单击时不关闭
+            } else {
+                closeSlideBox($(".slide-box"));
+            }
+            
+        });
 
         /*
          **--------------------------
