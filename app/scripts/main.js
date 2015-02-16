@@ -1,29 +1,29 @@
-;
+'use strict';
 (function($) {
     $(document).ready(function() {
         /*计算内容框的高度，适应浏览器高度变化*/
         function calcContentBox() {
-            var colMainHeight = $(".col-main").height();
-            var toolBarTopHeight = $(".toolbar-top").height();
-            var marginHeight = $(".content-box").outerHeight(true) - $(".content-box").height();
-            $(".content-box").height(colMainHeight - toolBarTopHeight - marginHeight - 2);
-            $(".slide-box").height(colMainHeight - 2);
-        };
+            var colMainHeight = $('.col-main').height();
+            var toolBarTopHeight = $('.toolbar-top').height();
+            var marginHeight = $('.content-box').outerHeight(true) - $('.content-box').height();
+            $('.content-box').height(colMainHeight - toolBarTopHeight - marginHeight - 2);
+            $('.slide-box').height(colMainHeight - 2);
+        }
 
         calcContentBox();
-        $(window).on("resize", calcContentBox);
+        $(window).on('resize', calcContentBox);
 
 
 
         /*新增预约弹出对话框*/
-        $("#btn-new-reservation").on('click', function() {
-            $("#dialog-new-reservation").find(".datetimepicker").datetimepicker({
+        $('#btn-new-reservation').on('click', function() {
+            $('#dialog-new-reservation').find('.datetimepicker').datetimepicker({
                 language: 'zh-CN'
             });
 
             var d = dialog({
                 title: '新建预约',
-                content: $("#dialog-new-reservation"),
+                content: $('#dialog-new-reservation'),
                 quickClose: false, // 点击空白处快速关闭
                 skin: 'skin-popup',
                 align: 'bottom right',
@@ -42,10 +42,10 @@
         });
 
         /*在新增课程预约的弹出框中，添加用户的对话框*/
-        $("#btn-add-member").on("click", function() {
+        $('#btn-add-member').on('click', function() {
             var d = dialog({
                 title: '用户增加',
-                content: $("#dialog-add-member"),
+                content: $('#dialog-add-member'),
                 quickClose: false, // 点击空白处快速关闭
                 skin: 'skin-popup'
             });
@@ -53,10 +53,10 @@
         });
 
         /*在新增课程预约的弹出框中，选择课程的对话框*/
-        $("#btn-add-course").on("click", function() {
+        $('#btn-add-course').on('click', function() {
             var d = dialog({
                 title: '选择课程',
-                content: $("#dialog-add-course"),
+                content: $('#dialog-add-course'),
                 quickClose: false, // 点击空白处快速关闭
                 skin: 'skin-popup'
             });
@@ -69,8 +69,8 @@
          ** 导入数据时添加更多输入框
          **--------------------------
          */
-        $("#import-single").find(".add-more").on('click', function() {
-            $(this).before('<br/>' + $("#tpl-add-more")[0].innerHTML);
+        $('#import-single').find('.add-more').on('click', function() {
+            $(this).before('<br/>' + $('#tpl-add-more')[0].innerHTML);
         });
 
         /*
@@ -78,10 +78,10 @@
          ** 批量导入按钮触发数据处理中提示
          **--------------------------
          */
-        $("#btn-import-batch").on("click", function(e) {
+        $('#btn-import-batch').on('click', function(e) {
             e.preventDefault();
             var d = dialog({
-                content: "数据存储中，请稍后...",
+                content: '数据存储中，请稍后...',
                 padding: 0,
                 skin: 'skin-processing'
             });
@@ -91,7 +91,7 @@
                 d.close().remove();
                 var d2 = dialog({
                     title: ' ',
-                    content: $("#dialog-import-bath-result"),
+                    content: $('#dialog-import-bath-result'),
                     skin: 'skin-result'
                 });
                 d2.showModal();
@@ -111,22 +111,22 @@
                 $(slideBox).width(0);
             }
             //打开右侧的滑出框，这里假设由点击表格内的行来触发，右侧弹出框的打开
-        $("#reservation-data").find("tbody tr").on("click", function(e) {
+        $('#reservation-data').find('tbody tr').on('click', function(e) {
             //找到相应的右侧滑出框，并打开它
             e.stopPropagation();
-            var slideBox = $("#reservation-detail");
+            var slideBox = $('#reservation-detail');
             openSlideBox(slideBox);
         });
-        $(".btn-slide-close").on("click", function() {
-            var slideBox = $(this).closest(".slide-box");
+        $('.btn-slide-close').on('click', function() {
+            var slideBox = $(this).closest('.slide-box');
             closeSlideBox(slideBox);
         });
-        $(window).on("click", function(e) {
-            if ($(e.target).closest(".slide-box").length > 0) {
+        $(window).on('click', function(e) {
+            if ($(e.target).closest('.slide-box').length > 0) {
                 //在slideBox内部单击时不关闭
             } else {
                 //TODO: 在滑出窗口中弹出对话框时，有bug
-                //closeSlideBox($(".slide-box"));
+                //closeSlideBox($('.slide-box'));
             }
 
         });
@@ -136,7 +136,7 @@
          ** 日历插件相关代码
          **--------------------------
          */
-        var reservationCalendar = $('#reservation-calendar').fullCalendar({
+        $('#reservation-calendar').fullCalendar({
                 //控件部分已经自定义，这里不需要默认的头部控件
                 header: {
                     left: '',
@@ -161,39 +161,38 @@
                     }],
                     textColor: '#ffffff'
                 }]
-
-            })
+            });
             //显示上一个月
-        $(".reservation-calendar-control").find("#btn-prev").on("click", function() {
+        $('.reservation-calendar-control').find('#btn-prev').on('click', function() {
             $('#reservation-calendar').fullCalendar('prev');
-            $(".reservation-calendar-control").find(".calendar-title").text($('#reservation-calendar').fullCalendar("getView").title);
+            $('.reservation-calendar-control').find('.calendar-title').text($('#reservation-calendar').fullCalendar('getView').title);
         });
         //显示上一个星期
-        $(".reservation-calendar-control").find("#btn-next").on("click", function() {
+        $('.reservation-calendar-control').find('#btn-next').on('click', function() {
             $('#reservation-calendar').fullCalendar('next');
-            $(".reservation-calendar-control").find(".calendar-title").text($('#reservation-calendar').fullCalendar("getView").title);
+            $('.reservation-calendar-control').find('.calendar-title').text($('#reservation-calendar').fullCalendar('getView').title);
         });
         //切换成月视图
-        $("#btn-month-view").on("click", function() {
+        $('#btn-month-view').on('click', function() {
             $('#reservation-calendar').fullCalendar('changeView', 'month');
-            $(".reservation-calendar-control").find(".calendar-title").text($('#reservation-calendar').fullCalendar("getView").title);
+            $('.reservation-calendar-control').find('.calendar-title').text($('#reservation-calendar').fullCalendar('getView').title);
         });
         //切换成星期视图
-        $("#btn-week-view").on("click", function() {
+        $('#btn-week-view').on('click', function() {
             $('#reservation-calendar').fullCalendar('changeView', 'basicWeek');
-            $(".reservation-calendar-control").find(".calendar-title").text($('#reservation-calendar').fullCalendar("getView").title);
+            $('.reservation-calendar-control').find('.calendar-title').text($('#reservation-calendar').fullCalendar('getView').title);
         });
 
         //教练预约滑出框
-        $(".coach-list li").on("click", function(e) {
+        $('.coach-list li').on('click', function(e) {
             //找到相应的右侧滑出框，并打开它
             e.stopPropagation();
-            var slideBox = $("#reservation-coach-detail");
+            var slideBox = $('#reservation-coach-detail');
             openSlideBox(slideBox);
         });
 
         //预约确认
-        $("#btn-reservation-confirm").on("click", function() {
+        $('#btn-reservation-confirm').on('click', function() {
             var d = dialog({
                 title: '预约确认',
                 content: '确认全部会员预约时间！',
@@ -206,7 +205,7 @@
             d.show(this).width(300);
         });
         //预约删除
-        $("#btn-reservation-delete").on("click", function() {
+        $('#btn-reservation-delete').on('click', function() {
             var d = dialog({
                 title: '确认删除',
                 content: '删除自后，数据不能恢复！',
@@ -217,5 +216,47 @@
             });
             d.show(this).width(300);
         });
+
+
+        /*
+         **--------------------------
+         ** 会员管理
+         **--------------------------
+         */
+        //激活高级搜索表单中的日期选择控件
+        $('#advance-search').find('.datetimepicker').datetimepicker({
+            language: 'zh-CN',
+            minView: 2,
+            format: 'yyyy-mm-dd',
+            autoclose: true
+        });
+
+        //弹出短信邀请对话框
+        $('#talbe-member-list .invite-by-sms').on('click', function(e){
+            var align = 'left bottom';
+            if ($(this).offset().top - $(this).scrollTop() >= $(window).height() - 200) {
+                align = 'top';
+            };
+            var d = dialog({
+                title: '短信邀请',
+                content: '确认再次邀请该用户！',
+                skin: 'skin-popup skin-confirm',
+                //align: align,
+                button: [{
+                    value: '确定',
+                    callback: function() {
+                        return false;
+                    },
+                    autofocus: true
+                }, {
+                    value: '取消',
+                    callback: function() {}
+                }],
+                statusbar: '<p class="help">不收取任何短信费用！</p>'
+            });
+            d.show(this).width(300);
+        });
+
+        
     });
 })(jQuery);

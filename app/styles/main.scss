@@ -244,6 +244,11 @@ header {
                 color: #999999;
             }
         }
+        &.navbar-right {
+            &:last-child {
+                margin-right: 0;
+            }
+        }
     }
 }
 /*
@@ -458,7 +463,15 @@ header {
                 text-align: center;
                 .ui-dialog-button {
                     float: none;
+                    padding-bottom: 20px;
                 }
+            }
+            .help {
+                position: absolute;
+                width: 100%;
+                bottom: 0px;
+                left: 0px;
+                text-align: center;
             }
         }
     }
@@ -736,5 +749,19 @@ header {
         > a {
             color: $toolbar-color;
         }
+    }
+}
+
+/*
+**--------------------------
+** 预约日历界面样式 
+**-------------------------- 
+*/
+#advance-search {
+    label {
+        width: 100px;
+    }
+    .search-group {
+        margin-left: 100px;
     }
 }
