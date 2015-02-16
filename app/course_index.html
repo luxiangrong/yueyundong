@@ -1,0 +1,223 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <title>03-课程管理-01首页</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/smalot-bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css" />
+    <!-- endbower -->
+    <link rel="stylesheet" href="bower_components/art-dialog/css/ui-dialog.css">
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+
+</head>
+
+<body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <header id="header">
+        <nav class="navbar navbar-default ">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"><img src="images/logo.png" />
+                    </a>
+                </div>
+                <div class="navbar-text member-count">
+                    <span>会员：<strong>15369</strong>名</span>
+                    <span>教练：<strong>15369</strong>名</span>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <p class="navbar-text">今天是 星期二，2014年05月27日</p>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="#">张三</a>
+                    </li>
+                    <li><a href="#">退出</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="content" class="wrap-all">
+        <div class="col-side">
+            <nav id="side-menu">
+                <ul class="nav">
+                    <li>
+                        <a href="#"><i class="iconfont icon-shouye"></i>管理首页</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-rili"></i>预约日历</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-huiyuan2"></i>会员管理</a>
+                    </li>
+                    <li class="active">
+                        <a href="#"><i class="iconfont icon-kecheng"></i>课程管理</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-weibiaoti5"></i>教练管理</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-rili"></i>圈子管理</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-tiyanfuwu"></i>微体验</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-baobiao"></i>统计报表</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-shezhi"></i>账户设置</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-main">
+            <div class="col-main-inner">
+                <div class="toolbar-top">
+                    <div class="title">
+                        <i class="iconfont icon-kecheng"></i>课程管理
+                    </div>
+                    <div class="title-center course-calendar-control">
+                        <button id="btn-prev" class="btn"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        </button>
+                        <strong class="calendar-title">2014年五月</strong>
+                        <button id="btn-next" class="btn"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        </button>
+                    </div>
+
+                    <div class="pull-right course-calendar-view-switch">
+                        <button class="btn btn-warning" id="btn-add-course">增加课程</button>
+                        <div class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-default active" id="btn-month-view">
+                                <input type="radio" name="calendar_view" autocomplete="off" checked>月
+                            </label>
+                            <label class="btn btn-default" id="btn-week-view">
+                                <input type="radio" name="calendar_view" autocomplete="off">周
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-nav pull-left">
+                    <ul class="nav nav-stacked">
+                        <li class="active"><a href="#">日 历</a>
+                        </li>
+                        <li><a href="#">列表</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-box">
+
+                    <div class="content-box-inner">
+
+                        <div id='course-calendar'></div>
+                    </div>
+                </div>
+                <div class="slide-box slide-box-coach" id="course-coach-detail">
+                    <div class="toolbar-top">
+                        <div class="title">
+                            <i class="iconfont icon-rili"></i>张三教练预约日历 (教练未全部确认)
+                        </div>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a id="btn-course-confirm" href="#"><i class="iconfont icon-ok"></i>预约确认</a>
+                            </li>
+                            <li class="bianji">
+                                <a id="btn-course-edit" href="#"><i class="iconfont icon-bianji"></i>编辑</a>
+                            </li>
+                            <li>
+                                <a id="btn-course-delete" href="#"><i class="iconfont icon-delete"></i>删除</a>
+                            </li>
+                            <li>
+                                <a class="btn-slide-close" href="#"><i class="iconfont icon-guanbi"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="container ">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>郭靖预约张三教练  李欣普拉提课程</h4>
+                                <table class="table table-bordered table-date">
+                                    <tbody>
+                                        <tr>
+                                            <th>开始时间</th>
+                                            <td>2014-3-12 14点 星期三</td>
+                                        </tr>
+                                        <tr>
+                                            <th>结束时间</th>
+                                            <td>2014-3-12 14点 星期三</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <h4>课程总课程：10节</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h5>
+                                    <i class="iconfont icon-huiyuan"></i><strong>用户</strong>
+                                </h5>
+                                <div class="item">
+                                    <span>用户：</span><span>张立彬</span><span>张立彬</span><i>张立彬</i><i class="iconfont icon-plus"></i>
+                                </div>
+                                <h5>
+                                    <i class="iconfont icon-weibiaoti5"></i><strong>教练</strong>
+                                </h5>
+                                <div class="item">
+                                    <span>教练：</span><span>张立彬</span><span>张立彬</span><i class="iconfont icon-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+    <script src="bower_components/respondJS/dest/respond.src.js"></script>
+    <script src="bower_components/smalot-bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/fullcalendar/dist/fullcalendar.js"></script>
+    <!-- endbower -->
+    <script src="bower_components/art-dialog/dist/dialog.js"></script>
+    <script src="bower_components/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="bower_components/fullcalendar/dist/lang/zh-cn.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>

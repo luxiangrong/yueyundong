@@ -105,7 +105,7 @@
                 <div class="content-box">
                     <div class="content-box-inner">
                         <div class="pull-right">
-                            <button class="btn btn-default">增加会员</button>
+                            <button id="btn-add-new-member" class="btn btn-default">增加会员</button>
                             <button class="btn btn-default">隐藏无效会员</button>
                         </div>
                         <ul class="nav nav-tabs nav-tabs-a">
@@ -124,7 +124,7 @@
                             <thead>
                                 <tr>
                                     <th>
-                                        <input type="checkbox" value="">
+                                        <input type="checkbox" value="" />
                                     </th>
                                     <th>姓名</th>
                                     <th>手机号码</th>
@@ -145,7 +145,8 @@
                                         <input type="checkbox" value="">
                                     </td>
                                     <td>长李冰</td>
-                                    <td>15011366838<span class="addition">（短信已经邀请）</span class="addition"></td>
+                                    <td>15011366838<span class="addition">（短信已经邀请）</span>
+                                    </td>
                                     <td>2014-12-20 13:23</td>
                                     <td>年卡</td>
                                     <td>2014-12-20 13:23</td>
@@ -153,7 +154,8 @@
                                     <td>100</td>
                                     <td>长李冰</td>
                                     <td>未下载</td>
-                                    <td><a class="btn btn-link invite-by-sms" href="#">再次短信邀请</a>
+                                    <td>
+                                        <button class="btn btn-link btn-invite-by-sms" href="#">再次短信邀请</button>
                                     </td>
                                     <td><i class="iconfont icon-shuzhuangtu"></i>
                                     </td>
@@ -163,7 +165,8 @@
                                         <input type="checkbox" value="">
                                     </td>
                                     <td>长李冰</td>
-                                    <td>15011366838<span class="addition">（通过APP引入新用户）</span class="addition"></td>
+                                    <td>15011366838<span class="addition">（通过APP引入新用户）</span>
+                                    </td>
                                     <td>2014-12-20 13:23</td>
                                     <td>年卡</td>
                                     <td>2014-12-20 13:23</td>
@@ -171,7 +174,8 @@
                                     <td>100</td>
                                     <td>长李冰</td>
                                     <td>未下载</td>
-                                    <td><a class="btn btn-link" href="">已完善资料</a>
+                                    <td>
+                                        <button class="btn btn-link btn-edit-diversion-member" href="">已完善资料</button>
                                     </td>
                                     <td>
                                     </td>
@@ -181,7 +185,8 @@
                                         <input type="checkbox" value="">
                                     </td>
                                     <td>长李冰</td>
-                                    <td>15011366838<span class="addition">（通过微信引入新用户）</span class="addition"></td>
+                                    <td>15011366838<span class="addition">（通过微信引入新用户）</span>
+                                    </td>
                                     <td>2014-12-20 13:23</td>
                                     <td>年卡</td>
                                     <td>2014-12-20 13:23</td>
@@ -189,7 +194,8 @@
                                     <td>100</td>
                                     <td>长李冰</td>
                                     <td>未下载</td>
-                                    <td><a class="btn btn-link" href="">用户状态编辑</a>
+                                    <td>
+                                        <button class="btn btn-link btn-edit-diversion-member" href="">用户状态编辑</button>
                                     </td>
                                     <td>
                                     </td>
@@ -207,7 +213,8 @@
                                     <td>100</td>
                                     <td>长李冰</td>
                                     <td>未下载</td>
-                                    <td><a class="btn btn-link" href="">待完善资料</a>
+                                    <td>
+                                        <button class="btn btn-link" href="">待完善资料</button>
                                     </td>
                                     <td></td>
                                 </tr>
@@ -224,7 +231,62 @@
                                     <td>100</td>
                                     <td>长李冰</td>
                                     <td>未下载</td>
-                                    <td><a class="btn btn-link invite-by-sms" href="javascript:void(0);">短信邀请</a>
+                                    <td>
+                                        <button class="btn btn-link invite-by-sms" href="javascript:void(0);">短信邀请</button>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" value="">
+                                    </td>
+                                    <td>长李冰</td>
+                                    <td>15011366838</td>
+                                    <td>2014-12-20 13:23</td>
+                                    <td>年卡</td>
+                                    <td>2014-12-20 13:23</td>
+                                    <td>100</td>
+                                    <td>100</td>
+                                    <td>长李冰</td>
+                                    <td>未下载</td>
+                                    <td>
+                                        <button class="btn btn-link invite-by-sms" href="javascript:void(0);">短信邀请</button>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" value="">
+                                    </td>
+                                    <td>长李冰</td>
+                                    <td>15011366838</td>
+                                    <td>2014-12-20 13:23</td>
+                                    <td>年卡</td>
+                                    <td>2014-12-20 13:23</td>
+                                    <td>100</td>
+                                    <td>100</td>
+                                    <td>长李冰</td>
+                                    <td>未下载</td>
+                                    <td>
+                                        <button class="btn btn-link invite-by-sms" href="javascript:void(0);">短信邀请</button>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" value="">
+                                    </td>
+                                    <td>长李冰</td>
+                                    <td>15011366838</td>
+                                    <td>2014-12-20 13:23</td>
+                                    <td>年卡</td>
+                                    <td>2014-12-20 13:23</td>
+                                    <td>100</td>
+                                    <td>100</td>
+                                    <td>长李冰</td>
+                                    <td>未下载</td>
+                                    <td>
+                                        <button class="btn btn-link invite-by-sms" href="javascript:void(0);">短信邀请</button>
                                     </td>
                                     <td></td>
                                 </tr>
@@ -232,9 +294,457 @@
                         </table>
                     </div>
                 </div>
+
+                <div class="slide-box slide-box-edit-diversion-member" id="slide-box-edit-diversion-member">
+                    <div class="toolbar-top">
+                        <div class="title">
+                            <i class="iconfont icon-shouye"></i>APP/微信导流用户编辑
+                        </div>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="divide"></li>
+                            <li>
+                                <a class="btn-slide-close" href="#"><i class="iconfont icon-guanbi"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="container">
+                        <div class="row info">
+                            <div class="col-xs-3">
+                                会员：<span>张立彬</span>
+                            </div>
+                            <div class="col-xs-4">
+                                手机：<span>15991234565</span>
+                            </div>
+                            <div class="col-xs-4">
+                                <button class="btn btn-default btn-custom-a">短信提示用户下载APP</button>
+                            </div>
+                            <div class="col-xs-12 desc">微信引入用户有“短信提示用户下载客户端APP”</div>
+                            <div class="form-inline col-xs-12">
+                                <div class="form-group">
+                                    <label class="form-control-static">该用户是：</label>
+                                </div>
+                                <label class="radio-inline">
+                                    <input type="radio" name="membertype" id="" value="new"> 新会员
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="membertype" id="" value="old"> 老会员
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row action-new-member">
+                            <div class="form-inline col-xs-12">
+                                <div class="form-group">
+                                    <label class="form-control-static">确认操作：</label>
+                                </div>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="" value="option1"> 已发展为会员
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="" value="option2"> 还未发展为会员
+                                </label>
+                                <input type="text" class="form-control" placeholder="原因">
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="form-horizontal">
+                                    <div class="form-group btn-group-action">
+                                        <div class="col-sm-2">
+                                            <button type="submit" class="btn btn-warning btn-block">修 改</button>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button type="" class="btn btn-default btn-block">取 消</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row action-old-member">
+                            <div class="col-xs-6">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="control-1" class="col-sm-4 control-label">姓名：</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="control-1" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="control-2" class="col-sm-4 control-label">手机号码：</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="control-2" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="control-3" class="col-sm-4 control-label">会员卡号：</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="control-3" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="control-4" class="col-sm-4 control-label">有效期：</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="control-4" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="control-5" class="col-sm-4 control-label">累计消费：</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="control-5" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="control-6" class="col-sm-4 control-label">会稽顾问：</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="control-6" placeholder="">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <a class="btn btn-link" href="javascript: void(0);">顾问</a>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="control-7" class="col-sm-4 control-label">课程：</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="control-7" placeholder="">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <a class="btn btn-link btn-add-course" href="javascript: void(0);">课程</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="control-8" class="col-sm-4 control-label">性别：</label>
+                                        <div class="col-sm-5">
+                                            <select class="form-control" id="control-8">
+                                                <option>男</option>
+                                                <option>女</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="control-9" class="col-sm-4 control-label">电子邮箱：</label>
+                                        <div class="col-sm-8">
+                                            <input type="email" class="form-control" id="control-9" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="control-10" class="col-sm-4 control-label">卡类型：</label>
+                                        <div class="col-sm-5">
+                                            <select class="form-control" id="control-10">
+                                                <option>年卡</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="control-11" class="col-sm-4 control-label">办卡日期：</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="control-11" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="control-12" class="col-sm-4 control-label">剩余次数：</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="control-12" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="control-13" class="col-sm-4 control-label">健身教练：</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="control-13" placeholder="">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <a class="btn btn-link btn-add-coach" href="javascript: void(0);">教练</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">其他信息：</label>
+                                        <div class="col-sm-10">
+                                            <textarea class="form-control" rows="3"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label hr-only"></label>
+                                        <div class="col-sm-2">
+                                            <button type="submit" class="btn btn-warning btn-block">修 改</button>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button type="" class="btn btn-default btn-block">取 消</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-box slide-box-member-detail" id="slide-box-member-detail">
+                    <div class="toolbar-top">
+                        <div class="title">
+                            <i class="iconfont icon-shouye"></i>会员详情
+                        </div>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="divide"></li>
+                            <li>
+                                <a class="btn-slide-close" href="#"><i class="iconfont icon-guanbi"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="container">
+                        <div class="row info">
+                            <div class="col-xs-3">
+                                会员：<span>张立彬</span>
+                            </div>
+                            <div class="col-xs-4">
+                                手机：<span>15991234565</span>
+                            </div>
+                            <div class="col-xs-4">
+                                <button class="btn btn-default btn-custom-a">再次短信邀请</button>
+                            </div>
+                        </div>
+                        <div class="row activity">
+                            <div class="col-xs-4 date">
+                                2014-12-12 18:45:30
+                            </div>
+                            <div class="col-xs-8">
+                                申请了 2014-12-20 9:00 - 10:00 普拉提课程 李欣
+                            </div>
+                            <div class="col-xs-4 date">
+                                2014-12-20 8:50
+                            </div>
+                            <div class="col-xs-8">
+                                成功签到，并体验该项目。
+                            </div>
+                        </div>
+                        <div class="row activity">
+                            <div class="col-xs-4 date">
+                                2014-12-12 18:45:30
+                            </div>
+                            <div class="col-xs-8">
+                                申请了 2014-12-20 9:00 - 10:00 普拉提课程 李欣
+                            </div>
+                            <div class="col-xs-4 date">
+                                2014-12-20 8:50
+                            </div>
+                            <div class="col-xs-8">
+                                成功签到，并体验该项目。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="slide-box slide-box-edit-member" id="slide-box-edit-member">
+                    <div class="toolbar-top">
+                        <div class="title">
+                            <i class="iconfont icon-shouye"></i>会员资料详情
+                        </div>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="divide"></li>
+                            <li>
+                                <a class="btn-slide-close" href="#"><i class="iconfont icon-guanbi"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="container">
+                        <form>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <label for="control-1" class="col-sm-4 control-label">姓名：</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="control-1" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="control-2" class="col-sm-4 control-label">手机号码：</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="control-2" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="control-3" class="col-sm-4 control-label">会员卡号：</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="control-3" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="control-4" class="col-sm-4 control-label">有效期：</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="control-4" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="control-5" class="col-sm-4 control-label">累计消费：</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="control-5" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="control-6" class="col-sm-4 control-label">会稽顾问：</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="control-6" placeholder="">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <a class="btn btn-link" href="javascript: void(0);">顾问</a>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="control-7" class="col-sm-4 control-label">课程：</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="control-7" placeholder="">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <a class="btn btn-link btn-add-course" href="javascript: void(0);">课程</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <label for="control-8" class="col-sm-4 control-label">性别：</label>
+                                            <div class="col-sm-5">
+                                                <select class="form-control" id="control-8">
+                                                    <option>男</option>
+                                                    <option>女</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="control-9" class="col-sm-4 control-label">电子邮箱：</label>
+                                            <div class="col-sm-8">
+                                                <input type="email" class="form-control" id="control-9" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="control-10" class="col-sm-4 control-label">卡类型：</label>
+                                            <div class="col-sm-5">
+                                                <select class="form-control" id="control-10">
+                                                    <option>年卡</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="control-11" class="col-sm-4 control-label">办卡日期：</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="control-11" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="control-12" class="col-sm-4 control-label">剩余次数：</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="control-12" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="control-13" class="col-sm-4 control-label">健身教练：</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="control-13" placeholder="">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <a class="btn btn-link btn-add-coach" href="javascript: void(0);">教练</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">其他信息：</label>
+                                            <div class="col-sm-10">
+                                                <textarea class="form-control" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label hr-only"></label>
+                                            <div class="col-sm-2">
+                                                <button type="submit" class="btn btn-warning btn-block">修 改</button>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <button type="" class="btn btn-default btn-block">取 消</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <div id="dialog-add-course" class="dialog-add-course">
+        <div class="form-inline">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 李欣普拉提课程
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 李欣普拉提课程
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 李欣普拉提课程
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 李欣普拉提课程
+                </label>
+            </div>
+        </div>
+        <p>
+            <a href="#"><i class="iconfont icon-plus"></i>增加课程</a>
+        </p>
+    </div>
+
+    <div id="dialog-add-coach" class="dialog-add-coach">
+        <div class="form-inline">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 张立彬
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 张立彬
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 张立彬
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 张立彬
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 张立彬
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 张立彬
+                </label>
+            </div>
+        </div>
+        <p>
+            <a href="#"><i class="iconfont icon-plus"></i>增加教练</a>
+        </p>
+    </div>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->

@@ -52,11 +52,13 @@
             d.show(this);
         });
 
-        /*在新增课程预约的弹出框中，选择课程的对话框*/
+        //在新增课程预约的弹出框中，选择课程的对话框
+        //如果这里的按钮是动态生成的，需要绑定委托事件
+        //$(document).on('click', '#btn-add-course', function(){...});
         $('#btn-add-course').on('click', function() {
             var d = dialog({
                 title: '选择课程',
-                content: $('#dialog-add-course'),
+                content: $('#dialog-add-course'), //将id为dialog-add-course元素的内容作为弹出框中的内容
                 quickClose: false, // 点击空白处快速关闭
                 skin: 'skin-popup'
             });
@@ -133,36 +135,36 @@
 
         /*
          **--------------------------
-         ** 日历插件相关代码
+         ** 预约日历插件相关代码
          **--------------------------
          */
         $('#reservation-calendar').fullCalendar({
-                //控件部分已经自定义，这里不需要默认的头部控件
-                header: {
-                    left: '',
-                    center: '',
-                    right: ''
-                },
-                //用于显示预约事件数据，具体使用方法参考文档：http://fullcalendar.io/docs/
-                eventSources: [{
-                    events: [{
-                        title: '张立彬预约',
-                        start: '2015-02-16',
-                        color: '#6dd749'
-                    }, {
-                        title: '张立彬预约',
-                        start: '2015-02-16',
-                        color: '#3ccf9d'
-                    }, {
-                        title: '张立彬预约',
-                        start: '2015-02-16',
-                        color: '#6dd749',
-                        allDay: false
-                    }],
-                    textColor: '#ffffff'
-                }]
-            });
-            //显示上一个月
+            //控件部分已经自定义，这里不需要默认的头部控件
+            header: {
+                left: '',
+                center: '',
+                right: ''
+            },
+            //用于显示预约事件数据，具体使用方法参考文档：http://fullcalendar.io/docs/
+            eventSources: [{
+                events: [{
+                    title: '张立彬预约',
+                    start: '2015-02-16',
+                    color: '#6dd749'
+                }, {
+                    title: '张立彬预约',
+                    start: '2015-02-16',
+                    color: '#3ccf9d'
+                }, {
+                    title: '张立彬预约',
+                    start: '2015-02-16',
+                    color: '#6dd749',
+                    allDay: false
+                }],
+                textColor: '#ffffff'
+            }]
+        });
+        //显示上一个月
         $('.reservation-calendar-control').find('#btn-prev').on('click', function() {
             $('#reservation-calendar').fullCalendar('prev');
             $('.reservation-calendar-control').find('.calendar-title').text($('#reservation-calendar').fullCalendar('getView').title);
@@ -183,6 +185,8 @@
             $('.reservation-calendar-control').find('.calendar-title').text($('#reservation-calendar').fullCalendar('getView').title);
         });
 
+        $('.reservation-calendar-control').find('.calendar-title').text($('#reservation-calendar').fullCalendar('getView').title);
+
         //教练预约滑出框
         $('.coach-list li').on('click', function(e) {
             //找到相应的右侧滑出框，并打开它
@@ -199,8 +203,7 @@
                 align: 'bottom',
                 skin: 'skin-popup skin-confirm',
                 okValue: '确定',
-                ok: function() {
-                }
+                ok: function() {}
             });
             d.show(this).width(300);
         });
@@ -211,8 +214,7 @@
                 content: '删除自后，数据不能恢复！',
                 skin: 'skin-popup skin-confirm',
                 okValue: '确定',
-                ok: function() {
-                }
+                ok: function() {}
             });
             d.show(this).width(300);
         });
@@ -232,10 +234,12 @@
         });
 
         //弹出短信邀请对话框
-        $('#talbe-member-list .invite-by-sms').on('click', function(e){
-            var align = 'left bottom';
+        $('#talbe-member-list .btn-invite-by-sms').on('click', function(e) {
+            e.stopImmediatePropagation();
+            var align = 'bottom left';
+            //对于页面底部的弹出框，设置弹出位置为按钮上方
             if ($(this).offset().top - $(this).scrollTop() >= $(window).height() - 200) {
-                align = 'top';
+                align = 'top right';
             };
             var d = dialog({
                 title: '短信邀请',
@@ -256,6 +260,135 @@
             });
             d.show(this).width(300);
         });
+
+        //滑出新增会员框
+        $('#btn-add-new-member').on('click', function() {
+            openSlideBox($('#slide-box-edit-member'));
+        });
+
+        //在滑出的新增会员框中的课程按钮上绑定点击事件，弹出选择课程对话框
+        //这里采用的是jQuery中委托代理事件绑定，可以为动态生成的dom元素绑定事件
+        $('#slide-box-edit-member').on('click', '.btn-add-course', function() {
+            var d = dialog({
+                title: '选择课程',
+                content: $('#dialog-add-course'),
+                quickClose: true, // 点击空白处快速关闭
+                skin: 'skin-popup'
+            });
+            d.show(this);
+        });
+
+        $('#slide-box-edit-member').on('click', '.btn-add-coach', function() {
+            var d = dialog({
+                title: '选择教练',
+                content: $('#dialog-add-coach'),
+                quickClose: true, // 点击空白处快速关闭
+                skin: 'skin-popup'
+            });
+            d.show(this);
+        });
+
+        //滑出会员详情框
+        $('#talbe-member-list tbody tr').on('click', function() {
+            openSlideBox($('#slide-box-member-detail'));
+        });
+
+        //滑出导流用户编辑框
+        $('#talbe-member-list .btn-edit-diversion-member').on('click', function(e) {
+            e.stopImmediatePropagation();
+            openSlideBox($('#slide-box-edit-diversion-member'));
+        });
+
+        //根据会员类型显示相应的编辑项
+        $('#slide-box-edit-diversion-member [name="membertype"]').on('change', function() {
+            $(".action-new-member, .action-old-member").hide();
+            var type = $(this).val();
+            if (type == 'new') {
+                $(".action-new-member").show();
+            }
+            if (type == 'old') {
+                $(".action-old-member").show();
+            }
+        });
+
+
+        /*
+         **--------------------------
+         ** 课程日历插件相关代码
+         **--------------------------
+         */
+        $('#course-calendar').fullCalendar({
+            //控件部分已经自定义，这里不需要默认的头部控件
+            header: {
+                left: '',
+                center: '',
+                right: ''
+            },
+            //用于显示预约事件数据，具体使用方法参考文档：http://fullcalendar.io/docs/
+            eventSources: [{
+                events: [{
+                    title: '高温瑜伽课程',
+                    start: '2015-02-16',
+                    color: '#6dd749'
+                }, {
+                    title: '高温瑜伽是打发我课程',
+                    start: '2015-02-16',
+                    color: '#3ccf9d'
+                }, {
+                    title: '高温瑜伽啊搜房网课程',
+                    start: '2015-02-16',
+                    color: '#6dd749',
+                    allDay: false
+                },{
+                    title: '高温瑜伽课程',
+                    start: '2015-02-19',
+                    color: '#6dd749'
+                }, {
+                    title: '高温瑜伽是打发我课程',
+                    start: '2015-02-19',
+                    color: '#3ccf9d'
+                },{
+                    title: '高温瑜伽课程',
+                    start: '2015-02-21',
+                    color: '#6dd749'
+                }, {
+                    title: '高温瑜伽是打发我课程',
+                    start: '2015-02-21',
+                    color: '#3ccf9d'
+                },{
+                    title: '高温瑜伽课程',
+                    start: '2015-02-26',
+                    color: '#6dd749'
+                }, {
+                    title: '高温瑜伽是打发我课程',
+                    start: '2015-02-27',
+                    color: '#3ccf9d'
+                }],
+                textColor: '#ffffff'
+            }]
+        });
+        //显示上一个月
+        $('.course-calendar-control').find('#btn-prev').on('click', function() {
+            $('#course-calendar').fullCalendar('prev');
+            $('.course-calendar-control').find('.calendar-title').text($('#course-calendar').fullCalendar('getView').title);
+        });
+        //显示上一个星期
+        $('.course-calendar-control').find('#btn-next').on('click', function() {
+            $('#course-calendar').fullCalendar('next');
+            $('.course-calendar-control').find('.calendar-title').text($('#course-calendar').fullCalendar('getView').title);
+        });
+        //切换成月视图
+        $('#btn-month-view').on('click', function() {
+            $('#course-calendar').fullCalendar('changeView', 'month');
+            $('.course-calendar-control').find('.calendar-title').text($('#course-calendar').fullCalendar('getView').title);
+        });
+        //切换成星期视图
+        $('#btn-week-view').on('click', function() {
+            $('#course-calendar').fullCalendar('changeView', 'basicWeek');
+            $('.course-calendar-control').find('.calendar-title').text($('#course-calendar').fullCalendar('getView').title);
+        });
+
+        $('.course-calendar-control').find('.calendar-title').text($('#course-calendar').fullCalendar('getView').title);
 
         
     });

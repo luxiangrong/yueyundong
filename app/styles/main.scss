@@ -205,7 +205,7 @@ header {
             font-size: $font-size-small;
         }
         .iconfont {
-            font-size: ceil(($font-size-base * 1.42)) ;
+            font-size: ceil(($font-size-base * 1.42));
         }
     }
     .title-center {
@@ -226,12 +226,23 @@ header {
             &:hover, &.active {
                 > a {
                     color: lighten($toolbar-color, 15%);
+                    &.btn-slide-close {
+                        background: $main-bg;
+                    }
                 }
             }
             > a {
                 color: $toolbar-color;
                 padding-top: 22px;
                 padding-bottom: 22px;
+            }
+            &.divide {
+                width: 1px;
+                background: $border-color;
+                height: 37px;
+                position: relative;
+                top: 14px;
+                margin-right: 5px;
             }
         }
     }
@@ -272,6 +283,25 @@ header {
     }
     .action-group {
         margin-bottom: 20px;
+    }
+}
+.content-nav {
+    width: 180px;
+    margin: 20px 0 30px 50px;
+    text-align: center;
+    li {
+        margin-bottom: 10px;
+        > a {
+            color: #666666;
+            font-size: $font-size-large;
+            border: 1px solid $border-color;
+        }
+        &.active {
+            > a {
+                background-color: #8a8a8a;
+                color: #fff;
+            }
+        }
     }
 }
 /*
@@ -457,7 +487,6 @@ header {
                 .ui-dialog-content {
                     text-align: center;
                 }
-                
             }
             .ui-dialog-footer {
                 text-align: center;
@@ -496,6 +525,16 @@ header {
         .ui-dialog-close {
             color: #fff;
             opacity: 0.5;
+        }
+    }
+}
+.ui-popup-top-right {
+    .ui-dialog {
+        &.skin-popup {
+            .ui-dialog-arrow-a {
+                border-bottom-color: transparent;
+                border-top: 8px solid #1c86cf;
+            }
         }
     }
 }
@@ -552,7 +591,7 @@ header {
 }
 /*新增课程弹出框*/
 
-.dialog-add-course {
+.dialog-add-course, .dialog-add-coach {
     display: none;
     width: 258px;
     .checkbox {
@@ -751,17 +790,74 @@ header {
         }
     }
 }
-
 /*
 **--------------------------
-** 预约日历界面样式 
+** 用户管理页面样式 
 **-------------------------- 
 */
-#advance-search {
+
+.advance-search {
     label {
         width: 100px;
     }
     .search-group {
         margin-left: 100px;
+    }
+}
+.slide-box-edit-member, .action-old-member {
+    .form-group {
+        // font-size: $font-size-small;
+        label {
+            width: 100px;
+            padding-right: 0;
+            color: #666666;
+            font-weight: normal;
+        }
+        .btn-link {
+            margin-left: -20px;
+        }
+    }
+}
+.btn-custom-a {
+    @include button-variant(#e39300, #fafafa, #c8c8c8);
+}
+.slide-box-member-detail, .slide-box-edit-diversion-member {
+    // font-size: $font-size-small;
+    .info {
+        .col-xs-3, .col-xs-4, .col-xs-5 {
+            line-height: 33px;
+        }
+        .col-xs-3, .col-xs-4, .col-xs-12 {
+            margin: 5px 0;
+        }
+        label {
+            font-weight: normal;
+        }
+    }
+    .activity {
+        &.row {
+            padding-bottom: 5px;
+        }
+        @include clearfix();
+        .date {
+            width: 165px;
+            color: #666666;
+        }
+        .col-xs-4, .col-xs-8 {
+            margin-bottom: 1em;
+        }
+    }
+    .desc {
+        color: #999999;
+    }
+    .btn-group-action {
+        margin-top: 20px;
+        margin-left: 60px
+    }
+}
+.action-new-member, .action-old-member {
+    display: none;
+    label {
+        font-weight: normal;
     }
 }
