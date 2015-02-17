@@ -20,6 +20,14 @@ body {
     height: 100%;
     -webkit-font-smoothing: subpixel-antialiased;
 }
+a, .btn-link {
+    &:hover {
+        text-decoration: none;
+    }
+}
+.align-center {
+    text-align: center;
+}
 .browsehappy {
     position: fixed;
     left: 0px;
@@ -607,6 +615,13 @@ header {
             text-decoration: none;
         }
     }
+    &.trigger-by-add-coach {
+        width: auto;
+        label {
+            font-weight: bold;
+            margin-right: 20px;
+        }
+    }
 }
 .dialog-import-bath-result {
     display: none;
@@ -780,8 +795,7 @@ header {
 **-------------------------- 
 */
 
-.reservation-calendar-view-switch,
-.course-calendar-view-switch {
+.reservation-calendar-view-switch, .course-calendar-view-switch {
     margin-right: 20px;
 }
 .coach-list {
@@ -797,13 +811,31 @@ header {
 **-------------------------- 
 */
 
-.advance-search {
+//表单样式A
+.form-size-a {
     label {
-        width: 100px;
+        &.control-label {
+            width: 100px;
+        }
     }
-    .search-group {
-        margin-left: 100px;
+    &.normal-label {
+        label {
+            font-weight: normal;
+        }
     }
+}
+.form-size-b {
+    label {
+        &.control-label {
+            width: 180px;
+        }
+    }
+    &.normal-label {
+        label {
+            font-weight: normal;
+        }
+    }
+    font-size: $font-size-small;
 }
 .slide-box-edit-member, .action-old-member {
     .form-group {
@@ -860,5 +892,84 @@ header {
     display: none;
     label {
         font-weight: normal;
+    }
+}
+/*
+**--------------------------
+** 课程管理页面样式 
+**-------------------------- 
+*/
+
+.dialog-select-duration {
+    display: none;
+    .checkbox {
+        margin-right: 20px;
+    }
+}
+.dialog-set-workinghour {
+    display: none;
+    .form-style-a {
+        label {
+            font-weight: normal;
+            margin: 10px;
+        }
+        .datetimepicker {
+            width: 250px;
+        }
+        margin-bottom: 10px;
+    }
+    .form-style-b {
+        background-color: #f0f0f0;
+        padding: 10px 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        .form-group, .checkbox {
+            margin-right: 20px;
+        }
+        label {
+            font-weight: normal;
+            padding-right: 0;
+        }
+    }
+    .date-range {
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+    .btn-link-a {
+        color: #333;
+    }
+    .col-sm-offset-a {
+        margin-left: 20px;
+    }
+    .col-sm-offset-b {
+        margin-left: 65px;
+    }
+    .col-sm-offset-c {
+        margin-left: 5px;
+    }
+}
+.table-course-list {
+    margin-top: 20px;
+    a {
+        color: #333333;
+        &:hover {
+            color: #1c86cf;
+            .iconfont {
+                color: #e39300;
+            }
+        }
+    }
+    .icon-shuxian2 {
+        margin: 0;
+    }
+}
+.form-add-coach {
+    .btn-warning {
+        width: 116px;
+    }
+    .checkbox {
+        label {
+            margin-right: 20px;
+        }
     }
 }

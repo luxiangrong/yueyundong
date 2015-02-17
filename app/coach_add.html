@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>02-会员管理-01首页</title>
+    <title>03-课程管理-01首页</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -64,13 +64,13 @@
                     <li>
                         <a href="#"><i class="iconfont icon-rili"></i>预约日历</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="#"><i class="iconfont icon-huiyuan2"></i>会员管理</a>
                     </li>
                     <li>
                         <a href="#"><i class="iconfont icon-kecheng"></i>课程管理</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="#"><i class="iconfont icon-weibiaoti5"></i>教练管理</a>
                     </li>
                     <li>
@@ -92,72 +92,58 @@
             <div class="col-main-inner">
                 <div class="toolbar-top">
                     <div class="title">
-                        <i class="iconfont icon-huiyuan2"></i>高级搜索
+                        <i class="iconfont icon-weibiaoti5"></i>教练管理
                     </div>
-
+                </div>
+                <div class="content-nav pull-left">
+                    <ul class="nav nav-stacked">
+                        <li><a href="#">教练日历</a>
+                        </li>
+                        <li class="active"><a href="#">教练列表</a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="content-box">
                     <div class="content-box-inner">
-                        <form class="form-horizontal form-size-a" id="advance-search">
+                        <form id="form-add-coach" class="form-horizontal form-size-a normal-label form-add-coach">
                             <div class="form-group">
-                                <label for="control-1" class="col-sm-2 control-label">姓名</label>
-                                <div class="col-sm-4">
+                                <label for="control-1" class="col-sm-2 control-label">教练姓名：</label>
+                                <div class="col-sm-3">
                                     <input type="text" class="form-control" id="control-1" />
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="control-2" class="col-sm-2 control-label">手机号</label>
-                                <div class="col-sm-4">
+                                <label for="control-2" class="col-sm-2 control-label">电话：</label>
+                                <div class="col-sm-3">
                                     <input type="text" class="form-control" id="control-2" />
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="control-3" class="col-sm-2 control-label">性别</label>
-                                <div class="col-sm-2">
-                                    <select class="form-control" id="control-3">
-                                        <option>男</option>
-                                        <option>女</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">年龄</label>
-                                <div class="col-sm-4">
-                                    <div class="row">
-                                        <div class="col-xs-6">
-                                            <input type="text" class="form-control" placeholder="">
-                                        </div>
-                                        <div style="position: absolute; left: 48%; top: 6px;">至</div>
-                                        <div class="col-xs-6">
-                                            <input type="text" class="form-control" placeholder="">
-                                        </div>
+                                <label for="control-2" class="col-sm-2 control-label">性别：</label>
+                                <div class="col-sm-3">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> 男
+                                        </label>
+                                        <label>
+                                            <input type="checkbox"> 女
+                                        </label>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="control-4" class="col-sm-2 control-label">预约日期</label>
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control datetimepicker" id="control-4" />
+                                <label for="control-2" class="col-sm-2 control-label">教授课程：</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="control-2" />
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="control-5" class="col-sm-2 control-label">卡类型</label>
-                                <div class="col-sm-2">
-                                    <select class="form-control" id="control-5">
-                                        <option>年卡</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="control-6" class="col-sm-2 control-label">到期日期</label>
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control datetimepicker" id="control-6" />
+                                <div class="col-sm-1">
+                                    <button class="btn btn-link" id="btn-select-course"><i class="iconfont icon-plus"></i>选择课程</button>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label sr-only"></label>
                                 <div class="col-sm-2">
-                                    <button type="submit" class="btn btn-block btn-warning">搜 索</button>
+                                    <button type="submit" class="btn btn-block btn-warning">新增教练</button>
                                 </div>
                             </div>
                         </form>
@@ -166,6 +152,41 @@
             </div>
         </div>
     </section>
+
+    <div id="dialog-add-course" class="dialog-add-course trigger-by-add-coach">
+        <div class="form-inline">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 李欣普拉提课程
+                </label>
+                时长：45分钟      课时：10节      服务人数：45       教练：美女
+            </div>
+            <br/>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 李欣普拉提课程
+                </label>
+                时长：45分钟      课时：10节      服务人数：45       教练：美女
+            </div>
+            <br/>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 李欣普拉提课程
+                </label>
+                时长：45分钟      课时：10节      服务人数：45       教练：美女
+            </div>
+            <br/>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 李欣普拉提课程
+                </label>
+                时长：45分钟      课时：10节      服务人数：45       教练：美女
+            </div>
+        </div>
+        <p>
+            <a href="#"><i class="iconfont icon-plus"></i>增加课程</a>
+        </p>
+    </div>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -189,6 +210,7 @@
     <!-- endbower -->
     <script src="bower_components/art-dialog/dist/dialog.js"></script>
     <script src="bower_components/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="bower_components/fullcalendar/dist/lang/zh-cn.js"></script>
     <!-- endbuild -->
 
     <!-- build:js({app,.tmp}) scripts/main.js -->

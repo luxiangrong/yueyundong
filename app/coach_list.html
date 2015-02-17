@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>02-会员管理-01首页</title>
+    <title>03-课程管理-01首页</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -64,13 +64,13 @@
                     <li>
                         <a href="#"><i class="iconfont icon-rili"></i>预约日历</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="#"><i class="iconfont icon-huiyuan2"></i>会员管理</a>
                     </li>
                     <li>
                         <a href="#"><i class="iconfont icon-kecheng"></i>课程管理</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="#"><i class="iconfont icon-weibiaoti5"></i>教练管理</a>
                     </li>
                     <li>
@@ -92,75 +92,66 @@
             <div class="col-main-inner">
                 <div class="toolbar-top">
                     <div class="title">
-                        <i class="iconfont icon-huiyuan2"></i>高级搜索
+                        <i class="iconfont icon-weibiaoti5"></i>教练管理
                     </div>
-
+                </div>
+                <div class="content-nav pull-left">
+                    <ul class="nav nav-stacked">
+                        <li><a href="#">教练日历</a>
+                        </li>
+                        <li class="active"><a href="#">教练列表</a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="content-box">
                     <div class="content-box-inner">
-                        <form class="form-horizontal form-size-a" id="advance-search">
-                            <div class="form-group">
-                                <label for="control-1" class="col-sm-2 control-label">姓名</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="control-1" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="control-2" class="col-sm-2 control-label">手机号</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="control-2" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="control-3" class="col-sm-2 control-label">性别</label>
-                                <div class="col-sm-2">
-                                    <select class="form-control" id="control-3">
-                                        <option>男</option>
-                                        <option>女</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">年龄</label>
-                                <div class="col-sm-4">
-                                    <div class="row">
-                                        <div class="col-xs-6">
-                                            <input type="text" class="form-control" placeholder="">
-                                        </div>
-                                        <div style="position: absolute; left: 48%; top: 6px;">至</div>
-                                        <div class="col-xs-6">
-                                            <input type="text" class="form-control" placeholder="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="control-4" class="col-sm-2 control-label">预约日期</label>
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control datetimepicker" id="control-4" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="control-5" class="col-sm-2 control-label">卡类型</label>
-                                <div class="col-sm-2">
-                                    <select class="form-control" id="control-5">
-                                        <option>年卡</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="control-6" class="col-sm-2 control-label">到期日期</label>
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control datetimepicker" id="control-6" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label sr-only"></label>
-                                <div class="col-sm-2">
-                                    <button type="submit" class="btn btn-block btn-warning">搜 索</button>
-                                </div>
-                            </div>
-                        </form>
+                        <table class="table table-hover table-default table-course-list">
+                            <thead>
+                                <tr>
+                                    <th style="width:10em;">教练姓名</th>
+                                    <th style="width:5em;">性别</th>
+                                    <th style="width:10em;">电话</th>
+                                    <th style="width:5em;" class="align-center">日历</th>
+                                    <th style="width:15em;">课程</th>
+                                    <th style="width:10em;" class="align-center">操作</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>张立彬</td>
+                                    <td>男</td>
+                                    <td>15478545478</td>
+                                    <td class="align-center"><a href="#"><i class="iconfont icon-rili"></i></a></td>
+                                    <td>小学教育幼儿课程</td>
+                                    <td class="align-center"><a href="">编辑</a><i class="iconfont icon-shuxian2"></i class="iconfont icon-shuxian2"><a href="">删除</a></td>
+                                </tr>
+                                <tr>
+                                    <td>张立彬</td>
+                                    <td>男</td>
+                                    <td>15478545478</td>
+                                    <td class="align-center"><a href="#"><i class="iconfont icon-rili"></i></a></td>
+                                    <td>小学教育幼儿课程</td>
+                                    <td class="align-center"><a href="">编辑</a><i class="iconfont icon-shuxian2"></i class="iconfont icon-shuxian2"><a href="">删除</a></td>
+                                </tr>
+                                <tr>
+                                    <td>张立彬</td>
+                                    <td>男</td>
+                                    <td>15478545478</td>
+                                    <td class="align-center"><a href="#"><i class="iconfont icon-rili"></i></a></td>
+                                    <td>小学教育幼儿课程</td>
+                                    <td class="align-center"><a href="">编辑</a><i class="iconfont icon-shuxian2"></i class="iconfont icon-shuxian2"><a href="">删除</a></td>
+                                </tr>
+                                <tr>
+                                    <td>张立彬</td>
+                                    <td>男</td>
+                                    <td>15478545478</td>
+                                    <td class="align-center"><a href="#"><i class="iconfont icon-rili"></i></a></td>
+                                    <td>小学教育幼儿课程</td>
+                                    <td class="align-center"><a href="">编辑</a><i class="iconfont icon-shuxian2"></i class="iconfont icon-shuxian2"><a href="">删除</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -189,6 +180,7 @@
     <!-- endbower -->
     <script src="bower_components/art-dialog/dist/dialog.js"></script>
     <script src="bower_components/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="bower_components/fullcalendar/dist/lang/zh-cn.js"></script>
     <!-- endbuild -->
 
     <!-- build:js({app,.tmp}) scripts/main.js -->

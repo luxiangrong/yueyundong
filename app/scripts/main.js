@@ -339,7 +339,7 @@
                     start: '2015-02-16',
                     color: '#6dd749',
                     allDay: false
-                },{
+                }, {
                     title: '高温瑜伽课程',
                     start: '2015-02-19',
                     color: '#6dd749'
@@ -347,7 +347,7 @@
                     title: '高温瑜伽是打发我课程',
                     start: '2015-02-19',
                     color: '#3ccf9d'
-                },{
+                }, {
                     title: '高温瑜伽课程',
                     start: '2015-02-21',
                     color: '#6dd749'
@@ -355,7 +355,7 @@
                     title: '高温瑜伽是打发我课程',
                     start: '2015-02-21',
                     color: '#3ccf9d'
-                },{
+                }, {
                     title: '高温瑜伽课程',
                     start: '2015-02-26',
                     color: '#6dd749'
@@ -390,6 +390,62 @@
 
         $('.course-calendar-control').find('.calendar-title').text($('#course-calendar').fullCalendar('getView').title);
 
-        
+        //新增课程页面，选择教练
+        $('#form-add-course #btn-select-coach').on('click', function() {
+            var d = dialog({
+                title: '选择教练',
+                content: $('#dialog-add-coach'),
+                quickClose: true, // 点击空白处快速关闭
+                skin: 'skin-popup'
+            });
+            d.show(this);
+        });
+        //新增课程页面，选择时长
+        $('#form-add-course #btn-select-duration').on('click', function() {
+            var d = dialog({
+                title: '选择时长',
+                content: $('#dialog-select-duration'),
+                quickClose: true, // 点击空白处快速关闭
+                skin: 'skin-popup'
+            });
+            d.show(this);
+        });
+        //新增课程页面，设置时间
+        $('#form-add-course #btn-set-workinghour').on('click', function() {
+            $('.datetimepicker').datetimepicker({
+                language: 'zh-CN',
+                minView: 2,
+                format: 'yyyy-mm-dd',
+                autoclose: true
+            });
+            var d = dialog({
+                title: '设置时间',
+                content: $('#dialog-set-workinghour'),
+                quickClose: true, // 点击空白处快速关闭
+                skin: 'skin-popup'
+            });
+            d.show(this).width(665);
+            $('#dialog-set-workinghour').on('click', '#btn-add-hour-range', function() {
+                //var range = $(this).closest('.form-group').find('.date-range');
+                //$(this).closest('.form-group').append('<br/>').append(range.eq(0).clone());
+            });
+            $('#dialog-set-workinghour').on('click', '#btn-delete-hour-range', function() {
+                //if($(this).closest('.form-group').find('.date-range').length > 1) {
+                //    $(this).closest('.form-group').find('.date-range').last().remove();
+                //    $(this).closest('.form-group').find('br').last().remove();
+                //}
+            });
+        });
+
+        $('#form-add-coach #btn-select-course').on('click', function(e){
+            e.preventDefault();
+            var d = dialog({
+                title: '选择课程',
+                content: $('#dialog-add-course'), //将id为dialog-add-course元素的内容作为弹出框中的内容
+                quickClose: false, // 点击空白处快速关闭
+                skin: 'skin-popup'
+            });
+            d.show(this);
+        });
     });
 })(jQuery);

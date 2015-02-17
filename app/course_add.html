@@ -1,0 +1,511 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <title>03-课程管理-01首页</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/smalot-bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css" />
+    <!-- endbower -->
+    <link rel="stylesheet" href="bower_components/art-dialog/css/ui-dialog.css">
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+
+</head>
+
+<body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <header id="header">
+        <nav class="navbar navbar-default ">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"><img src="images/logo.png" />
+                    </a>
+                </div>
+                <div class="navbar-text member-count">
+                    <span>会员：<strong>15369</strong>名</span>
+                    <span>教练：<strong>15369</strong>名</span>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <p class="navbar-text">今天是 星期二，2014年05月27日</p>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="#">张三</a>
+                    </li>
+                    <li><a href="#">退出</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="content" class="wrap-all">
+        <div class="col-side">
+            <nav id="side-menu">
+                <ul class="nav">
+                    <li>
+                        <a href="#"><i class="iconfont icon-shouye"></i>管理首页</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-rili"></i>预约日历</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-huiyuan2"></i>会员管理</a>
+                    </li>
+                    <li class="active">
+                        <a href="#"><i class="iconfont icon-kecheng"></i>课程管理</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-weibiaoti5"></i>教练管理</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-rili"></i>圈子管理</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-tiyanfuwu"></i>微体验</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-baobiao"></i>统计报表</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-shezhi"></i>账户设置</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-main">
+            <div class="col-main-inner">
+                <div class="toolbar-top">
+                    <div class="title">
+                        <i class="iconfont icon-kecheng"></i>课程管理
+                    </div>
+                    <div class="pull-right course-calendar-view-switch">
+                        <button class="btn btn-warning" id="btn-add-course">增加课程</button>
+                    </div>
+                </div>
+                <div class="content-nav pull-left">
+                    <ul class="nav nav-stacked">
+                        <li class="active"><a href="#">日 历</a>
+                        </li>
+                        <li><a href="#">列表</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <div class="content-box-inner">
+                        <form id="form-add-course" class="form-horizontal form-size-b normal-label">
+                            <div class="form-group">
+                                <label for="control-1" class="col-sm-2 control-label">课程名称：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="control-1" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">课程教练：</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">
+                                        <a id="btn-select-coach" href="javascript:void(0);"><i class="iconfont icon-plus"></i>选择教练</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="control-2" class="col-sm-2 control-label">课时：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="control-2" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">单节时长：</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">
+                                        <a id="btn-select-duration" href="javascript:void(0);"><i class="iconfont icon-plus"></i>选择时长</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="control-3" class="col-sm-2 control-label">服务人数：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="control-3" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">可预约时间：</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">
+                                        <a id="btn-set-workinghour" href="javascript:void(0);"><i class="iconfont icon-plus"></i>设置时间</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">是否允许试用体验：</label>
+                                <div class="col-sm-4">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" id="inlineCheckbox1" value="option1"> 允许试用体验
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" id="inlineCheckbox2" value="option2"> 不允许试用体验
+                                    </label>
+                                    <span class="help-block">设置课程允许试用体验，可以给你带来新的客户哟！</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label sr-only"></label>
+                                <div class="col-sm-2">
+                                    <button type="submit" class="btn btn-block btn-warning">新增课程</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="dialog-add-coach" class="dialog-add-coach">
+        <div class="form-inline">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 张立彬
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 张立彬
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 张立彬
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 张立彬
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 张立彬
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 张立彬
+                </label>
+            </div>
+        </div>
+        <p>
+            <a href="#"><i class="iconfont icon-plus"></i>增加教练</a>
+        </p>
+    </div>
+
+    <div id="dialog-select-duration" class="dialog-select-duration">
+        <div class="form-inline">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 1小时
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 2小时
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 3小时
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 1小时
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 2小时
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 3小时
+                </label>
+            </div>
+            <br/>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 1小时
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 2小时
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 3小时
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 1小时
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 2小时
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 3小时
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div id="dialog-set-workinghour" class="dialog-set-workinghour">
+        <div role="tabpanel">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs nav-tabs-a" role="tablist">
+                <li role="presentation" class="active"><a href="#weekly-type" aria-controls="weekly-type" role="tab" data-toggle="tab">每周规律型</a>
+                </li>
+                <li role="presentation"><a href="#fix-type" aria-controls="fix-type" role="tab" data-toggle="tab">固定日期型</a>
+                </li>
+                <li role="presentation"><a href="#custom-type" aria-controls="custom-type" role="tab" data-toggle="tab">自定义时间段</a>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="weekly-type">
+                    <div class="form-inline form-style-a">
+                        <div class="form-group">
+                            <label for="start-date">从</label>
+                            <input type="text" class="form-control datetimepicker" id="start-date">
+                        </div>
+                        <div class="form-group">
+                            <label for="end-date">至</label>
+                            <input type="text" class="form-control datetimepicker" id="end-date">
+                        </div>
+                    </div>
+                    <div class="form-inline form-style-b">
+                        <div class="form-group">
+                            <label>星期：</label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> 周一
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> 周二
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> 周三
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> 周四
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> 周五
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> 周六
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> 周日
+                            </label>
+                        </div>
+                        <br/>
+                        <div class="form-group">
+                            <label>时段：</label>
+                        </div>
+                        <div class="form-group">
+                            <div class="date-range">
+                                <select class="form-control">
+                                    <option>01</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                    <option>04</option>
+                                </select>
+                                到
+                                <select class="form-control">
+                                    <option>01</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                    <option>04</option>
+                                </select>
+                            </div>
+                            <a class="btn btn-link" id="btn-add-hour-range"><i class="iconfont icon-plus"></i>增加时间段</a>
+                            <a class="btn btn-link btn-link-a" id="btn-delete-hour-range"><i class="iconfont icon-minus"></i>删除时间段</a>
+                        </div>
+                    </div>
+                    <button class="btn btn-warning col-sm-2 col-sm-offset-a">保 存</button>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="fix-type">
+                    <div class="form-inline form-style-a">
+                        <div class="form-group">
+                            <label for="start-date">日期：</label>
+                            <input type="text" class="form-control datetimepicker" id="start-date">
+                        </div>
+                    </div>
+                    <div class="form-inline form-style-a">
+                        <div class="form-group">
+                            <label>时段：</label>
+                        </div>
+                        <div class="form-group">
+                            <div class="date-range">
+                                <select class="form-control">
+                                    <option>01</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                    <option>04</option>
+                                </select>
+                                到
+                                <select class="form-control">
+                                    <option>01</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                    <option>04</option>
+                                </select>
+                            </div>
+                            <a class="btn btn-link" id="btn-add-hour-range"><i class="iconfont icon-plus"></i>增加时间段</a>
+                            <a class="btn btn-link btn-link-a" id="btn-delete-hour-range"><i class="iconfont icon-minus"></i>删除时间段</a>
+                        </div>
+                    </div>
+                    <button class="btn btn-warning col-sm-2 col-sm-offset-b">保 存</button>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="custom-type">
+                	<div class="form-inline form-style-a">
+                        <div class="form-group">
+                            <label for="start-date">从</label>
+                            <input type="text" class="form-control datetimepicker" id="start-date">
+                        </div>
+                        <div class="form-group">
+                            <label for="end-date">至</label>
+                            <input type="text" class="form-control datetimepicker" id="end-date">
+                        </div>
+                    </div>
+                    <div class="form-inline form-style-a">
+                        <div class="form-group">
+                            <label>时段：</label>
+                        </div>
+                        <div class="form-group">
+                            <div class="date-range">
+                                <select class="form-control">
+                                    <option>01</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                    <option>04</option>
+                                </select>
+                                到
+                                <select class="form-control">
+                                    <option>01</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                    <option>04</option>
+                                </select>
+                            </div>
+                            <a class="btn btn-link" id="btn-add-hour-range"><i class="iconfont icon-plus"></i>增加时间段</a>
+                            <a class="btn btn-link btn-link-a" id="btn-delete-hour-range"><i class="iconfont icon-minus"></i>删除时间段</a>
+                        </div>
+                    </div>
+                    <div class="form-inline form-style-a">
+                        <div class="form-group">
+                            <label for="start-date">从</label>
+                            <input type="text" class="form-control datetimepicker" id="start-date">
+                        </div>
+                        <div class="form-group">
+                            <label for="end-date">至</label>
+                            <input type="text" class="form-control datetimepicker" id="end-date">
+                        </div>
+                    </div>
+                    <div class="form-inline form-style-a">
+                        <div class="form-group">
+                            <label>时段：</label>
+                        </div>
+                        <div class="form-group">
+                            <div class="date-range">
+                                <select class="form-control">
+                                    <option>01</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                    <option>04</option>
+                                </select>
+                                到
+                                <select class="form-control">
+                                    <option>01</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                    <option>04</option>
+                                </select>
+                            </div>
+                            <a class="btn btn-link" id="btn-add-hour-range"><i class="iconfont icon-plus"></i>增加时间段</a>
+                            <a class="btn btn-link btn-link-a" id="btn-delete-hour-range"><i class="iconfont icon-minus"></i>删除时间段</a>
+                        </div>
+                    </div>
+                    <button class="btn btn-warning col-sm-2 col-sm-offset-c">保 存</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+    <script src="bower_components/respondJS/dest/respond.src.js"></script>
+    <script src="bower_components/smalot-bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/fullcalendar/dist/fullcalendar.js"></script>
+    <!-- endbower -->
+    <script src="bower_components/art-dialog/dist/dialog.js"></script>
+    <script src="bower_components/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="bower_components/fullcalendar/dist/lang/zh-cn.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>
