@@ -447,5 +447,47 @@
             });
             d.show(this);
         });
+
+        //微体验列表页面删除确认框
+        $('.table-weitiyan-list .btn-delete').on('click', function(e){
+            var d = dialog({
+                title: '确认删除',
+                content: '确认删除该条信息',
+                skin: 'skin-popup skin-confirm',
+                okValue: '确定',
+                align: 'bottom',
+                ok: function() {}
+            });
+            d.show(this).width(300);
+        });
+        //微体验列表页面，二维码显示
+        $('.table-weitiyan-list .show-qr').on('click', function(e){
+            var d = dialog({
+                content: '<img src="images/qr_01.jpg" />',
+                skin: 'skin-popup',
+                align: 'bottom',
+                quickClose: true, 
+            });
+            d.show(this).width(133);
+        });
+
+        //文件上传按钮美化
+        $('[role="file"]').on('click', function(){
+            var _this = this;
+            var toggleTarget = $('#' + $(this).attr("data-toggle"));
+            toggleTarget.on('change', function(){
+                if($(this).val()) {
+                    $(_this).val($(this).val());
+                }
+            });
+            toggleTarget.trigger('click');
+        });
+
+        $('#form-weitiyan-edit').find('.datetimepicker').datetimepicker({
+            language: 'zh-CN',
+            minView: 2,
+            format: 'yyyy-mm-dd',
+            autoclose: true
+        });
     });
 })(jQuery);
