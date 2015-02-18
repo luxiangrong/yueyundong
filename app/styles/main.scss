@@ -9,7 +9,7 @@ $border-color: #dfdfdf;
 $toolbar-color: #5b5b5b;
 $tab-active-color: #333333;
 $table-bg-hover: #f0f0f0;
-$state-warning-text:             #e39300 !default;
+$state-warning-text: #e39300 !default;
 @import "iconfont.scss";
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
@@ -29,7 +29,6 @@ a, .btn-link {
 .align-center {
     text-align: center;
 }
-
 .icon-shuxian2 {
     margin: 0;
 }
@@ -56,6 +55,24 @@ a, .btn-link {
         border-color: lighter(#2c2c2c, 25%);
         color: darken(#fff, 15%);
     }
+}
+.btn-custom-a {
+    @include button-variant(#e39300, #fafafa, #c8c8c8);
+}
+.btn-custom-b {
+    @include button-variant(#ffffff, #ababab, #ababab);
+}
+.btn-link-custom-a {
+    color: #e39300;
+    &:hover, &:focus {
+        color: #eb9800;
+    }
+}
+.text-danger {
+    color: #cd0202;
+}
+.text-success {
+    color: #1abf09;
 }
 /*
 **--------------------------
@@ -828,6 +845,15 @@ header {
             font-weight: normal;
         }
     }
+    .col-btn {
+        width: 130px;
+    }
+    h5 {
+        font-weight: normal;
+        color: #999999;
+        font-size: $font-size-small;
+        margin: 30px 0;
+    }
 }
 .form-size-b {
     label {
@@ -855,9 +881,6 @@ header {
             margin-left: -20px;
         }
     }
-}
-.btn-custom-a {
-    @include button-variant(#e39300, #fafafa, #c8c8c8);
 }
 .slide-box-member-detail, .slide-box-edit-diversion-member {
     // font-size: $font-size-small;
@@ -1013,7 +1036,6 @@ header {
         }
     }
 }
-
 .table-weitiyan-list {
     .text-muted {
         margin-left: 1em;
@@ -1028,11 +1050,10 @@ header {
         }
     }
 }
-
 .form-weitiyan-edit {
     label {
         &.control-label {
-            font-weight: normal; 
+            font-weight: normal;
         }
     }
     fieldset {
@@ -1040,6 +1061,124 @@ header {
         padding: 20px 0 10px;
         .help-block {
             color: #999;
+        }
+    }
+}
+/*
+**--------------------------
+** 账户设置样式 
+**-------------------------- 
+*/
+
+.two-step-validate {
+    .media {
+        background-color: #f3f3f3;
+        padding: 30px 40px;
+    }
+}
+.form-password-input {
+    width: 413px;
+    padding: 20px 10px;
+    label {
+        font-weight: normal;
+        color: #666;
+    }
+}
+.indicator {
+    position: relative;
+    margin-left: 50px;
+    margin-top: 50px;
+    .track {
+        width: 430px;
+        display: inline-block;
+        border-bottom: 4px solid #cfcfcf;
+        &.enabled {
+            border-bottom: 4px solid #1c86cf;
+        }
+    }
+    .node {
+        position: absolute;
+        text-align: center;
+        top: -30px;
+        .step {
+            margin: 0 auto;
+            width: 28px;
+            line-height: 28px;
+            border-radius: 28px;
+            text-align: center;
+            color: #fff;
+        }
+        &.enabled {
+            p {
+                color: #1c86cf;
+            }
+            .step {
+                color: #ffffff;
+                background-color: #1c86cf;
+            }
+        }
+        &.disabled {
+            p {
+                color: #9b9b9b;
+            }
+            .step {
+                color: #9b9b9b;
+                background-color: #cfcfcf;
+            }
+        }
+        &.node-1 {
+            left: -55px;
+        }
+        &.node-2 {
+            left: 400px;
+        }
+        &.node-3 {
+            left: 830px;
+        }
+    }
+}
+.two-step-validate {
+    .container {
+        width: 960px;
+        margin-left: 0px;
+        margin-top: 100px;
+    }
+    .col-xs-7 {
+        text-align: right;
+        padding-right: 50px;
+    }
+    .btn-nav {
+        margin-top: 20px;
+    }
+    &.step-1 {
+        .media {
+            border: 1px solid $border-color;
+            background-color: transparent;
+            padding: 5px 20px;
+        }
+    }
+    &.step-2 {
+        .media {
+            background-color: transparent;
+            padding: 0;
+            .bg-info {
+                border: 1px solid #aad4f0;
+                border-radius: 3px;
+                color: #357092;
+                padding: 10px;
+                font-size: $font-size-base;
+                p {
+                    margin: 5px 0;
+                }
+            }
+        }
+    }
+    &.step-3 {
+        .btn-warning {
+            color: #fff;
+        }
+        .col-xs-5 {
+            margin-top: 70px;
         }
     }
 }

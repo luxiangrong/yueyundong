@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>02-会员管理-01首页</title>
+    <title>07-账户设置-01首页</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -64,7 +64,7 @@
                     <li>
                         <a href="#"><i class="iconfont icon-rili"></i>预约日历</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="#"><i class="iconfont icon-huiyuan2"></i>会员管理</a>
                     </li>
                     <li>
@@ -82,7 +82,7 @@
                     <li>
                         <a href="#"><i class="iconfont icon-baobiao"></i>统计报表</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="#"><i class="iconfont icon-shezhi"></i>账户设置</a>
                     </li>
                 </ul>
@@ -92,72 +92,120 @@
             <div class="col-main-inner">
                 <div class="toolbar-top">
                     <div class="title">
-                        <i class="iconfont icon-huiyuan2"></i>高级搜索
+                        <i class="iconfont icon-shezhi"></i>账户设置
                     </div>
-
                 </div>
                 <div class="content-box">
                     <div class="content-box-inner">
-                        <form class="form-horizontal form-size-a" id="advance-search">
+                        <ul class="nav nav-tabs nav-tabs-a">
+                            <li class="active"><a href="#">基本设置</a>
+                            </li>
+                            <li><a href="#">两步验证</a>
+                            </li>
+                            <li><a href="#">安全日志</a>
+                            </li>
+                        </ul>
+                        <form class="form-horizontal form-size-a form-profile-edit normal-label" id="form-profile-edit">
+                        	<h5>修改资料信息</h5>
                             <div class="form-group">
-                                <label for="control-1" class="col-sm-2 control-label">姓名</label>
+                                <label for="control-2" class="col-sm-2 control-label">logo：</label>
                                 <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="control-1" />
+                                    <p class="form-control-static"><img src="images/logo.png" />
+                                        <button class="btn btn-link"><span class="text-warning">重新上传</span>
+                                        </button>
+                                    </p>
+                                </div>
+                                <div class="col-sm-6">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="control-2" class="col-sm-2 control-label">手机号</label>
+                                <label for="control-1" class="col-sm-2 control-label">机构图片：</label>
                                 <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="control-2" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="control-3" class="col-sm-2 control-label">性别</label>
-                                <div class="col-sm-2">
-                                    <select class="form-control" id="control-3">
-                                        <option>男</option>
-                                        <option>女</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">年龄</label>
-                                <div class="col-sm-4">
-                                    <div class="row">
-                                        <div class="col-xs-6">
-                                            <input type="text" class="form-control" placeholder="">
-                                        </div>
-                                        <div style="position: absolute; left: 48%; top: 6px;">至</div>
-                                        <div class="col-xs-6">
-                                            <input type="text" class="form-control" placeholder="">
-                                        </div>
+                                    <input type="file" name="file" class="form-control" style="visibility:hidden;" id="jigoutupian" />
+                                    <div class="input-group" style="margin-top: -34px;">
+                                        <input type="text" id="" role="file" data-toggle="jigoutupian" class="form-control" placeholder="浏览">
+                                        <span class="input-group-addon btn btn-default" id="">上传</span>
+                                        <span class="input-group-addon btn btn-default" id="">查看</span>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="control-4" class="col-sm-2 control-label">预约日期</label>
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control datetimepicker" id="control-4" />
+                                <div class="col-sm-6">
+                                    <p class="form-control-static help-block">建议尺寸：640px * 260px</p>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="control-5" class="col-sm-2 control-label">卡类型</label>
+                                <label for="" class="col-sm-2 control-label">机构名称：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">邮箱：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">地区：</label>
                                 <div class="col-sm-2">
-                                    <select class="form-control" id="control-5">
-                                        <option>年卡</option>
+                                    <select class="form-control">
+                                        <option>北京市</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-2">
+                                    <select class="form-control">
+                                        <option>北京市</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="control-6" class="col-sm-2 control-label">到期日期</label>
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control datetimepicker" id="control-6" />
+                                <label for="control-1" class="col-sm-2 control-label">通讯地址：</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" id="" class="form-control">
+                                        <span class="input-group-addon btn btn-default" id="">地图标示</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">固定电话：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label sr-only"></label>
-                                <div class="col-sm-2">
-                                    <button type="submit" class="btn btn-block btn-warning">搜 索</button>
+                                <div class="col-sm-2 col-btn">
+                                    <button type="submit" class="btn btn-block btn-warning">保存</button>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <form class="form-horizontal form-size-a form-password-edit normal-label" id="form-password-edit">
+                        	<h5>修改密码</h5>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">原始密码：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">新密码：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">密码确认：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label sr-only"></label>
+                                <div class="col-sm-2 col-btn">
+                                    <button type="submit" class="btn btn-block btn-warning">确认修改</button>
                                 </div>
                             </div>
                         </form>

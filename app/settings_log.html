@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>00-管理首页-07首页-01</title>
+    <title>07-账户设置-03安全日志</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -58,7 +58,7 @@
         <div class="col-side">
             <nav id="side-menu">
                 <ul class="nav">
-                    <li class="active">
+                    <li>
                         <a href="#"><i class="iconfont icon-shouye"></i>管理首页</a>
                     </li>
                     <li>
@@ -82,7 +82,7 @@
                     <li>
                         <a href="#"><i class="iconfont icon-baobiao"></i>统计报表</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="#"><i class="iconfont icon-shezhi"></i>账户设置</a>
                     </li>
                 </ul>
@@ -92,59 +92,97 @@
             <div class="col-main-inner">
                 <div class="toolbar-top">
                     <div class="title">
-                        <i class="iconfont icon-shouye"></i>管理首页<small>4月23日系统临时升级预约暂时关闭！</small>
+                        <i class="iconfont icon-shezhi"></i>账户设置
                     </div>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a id="btn-new-reservation" href="#"><i class="iconfont icon-plus"></i>新增预约</a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#"><i class="iconfont icon-tianjiashangjia"></i>邀请会员加入</a>
-                        </li>
-                    </ul>
-                    <div style="clear:both"></div>
                 </div>
                 <div class="content-box">
                     <div class="content-box-inner">
-                        <ul class="nav nav-tabs nav-tabs-b">
-                            <li><a href="#">数据导入</a>
+                    	<ul class="nav nav-tabs nav-tabs-a">
+                            <li><a href="#">基本设置</a>
                             </li>
-                            <li class="active"><a href="#">逐条导入</a>
+                            <li><a href="#">两步验证</a>
+                            </li>
+                            <li class="active"><a href="#">安全日志</a>
                             </li>
                         </ul>
-                        <div id="import-single" class="form-inline import-single">
-                            <div class="form-group">
-                                <label class="" for="name">姓名：</label>
-                                <input type="text" class="form-control" id="name" placeholder="">
-                            </div>
-                            <div class="form-group">
-                                <label class="" for="mobile">手机号码：</label>
-                                <input type="text" class="form-control" id="mobile" placeholder="">
-                            </div>
-                            <div class="form-group add-more">
-                                <label class="more"><a class="btn btn-link"><i class="iconfont icon-plus"></i>增加更多</a>
-                                </label>
-                            </div>
-                            <div class="block">
-                                <div class="col-sm-10">
-                                    <button type="submit" class="btn btn-warning">确定增加</button>
-                                </div>
-                            </div>
-                        </div>
+                        <table class="table table-hover table-default table-log-list">
+                            <thead>
+                                <tr>
+                                    <th style="width: 5em;">#</th>
+                                    <th style="width: 20em;">登陆地址</th>
+                                    <th style="width:10em;">客户端</th>
+                                    <th style="width:15em;">登陆时间</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>北京市朝阳区 （145.125.15.254）</td>
+                                    <td>Web端
+                                    </td>
+                                    <td>
+                                        2015-02-04 14:12:12
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>北京市朝阳区 （145.125.15.254）</td>
+                                    <td>Web端
+                                    </td>
+                                    <td>
+                                        2015-02-04 14:12:12
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>北京市朝阳区 （145.125.15.254）</td>
+                                    <td>Web端
+                                    </td>
+                                    <td>
+                                        2015-02-04 14:12:12
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>北京市朝阳区 （145.125.15.254）</td>
+                                    <td>Web端
+                                    </td>
+                                    <td>
+                                        2015-02-04 14:12:12
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>北京市朝阳区 （145.125.15.254）</td>
+                                    <td>Web端
+                                    </td>
+                                    <td>
+                                        2015-02-04 14:12:12
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>北京市朝阳区 （145.125.15.254）</td>
+                                    <td>Web端
+                                    </td>
+                                    <td>
+                                        2015-02-04 14:12:12
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <script type="text/add-more" id="tpl-add-more">
-        <div class="form-group">
-            <label class="" for="name">姓名：</label>
-            <input type="text" class="form-control" id="name" placeholder="">
-        </div>
-        <div class="form-group">
-            <label class="" for="mobile">手机号码：</label>
-            <input type="text" class="form-control" id="mobile" placeholder="">
-        </div>
-    </script>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->

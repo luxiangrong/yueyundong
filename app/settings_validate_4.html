@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>00-管理首页-07首页-01</title>
+    <title>07-账户设置-02两步验证-04开启流程</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -58,7 +58,7 @@
         <div class="col-side">
             <nav id="side-menu">
                 <ul class="nav">
-                    <li class="active">
+                    <li>
                         <a href="#"><i class="iconfont icon-shouye"></i>管理首页</a>
                     </li>
                     <li>
@@ -82,7 +82,7 @@
                     <li>
                         <a href="#"><i class="iconfont icon-baobiao"></i>统计报表</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="#"><i class="iconfont icon-shezhi"></i>账户设置</a>
                     </li>
                 </ul>
@@ -92,41 +92,72 @@
             <div class="col-main-inner">
                 <div class="toolbar-top">
                     <div class="title">
-                        <i class="iconfont icon-shouye"></i>管理首页<small>4月23日系统临时升级预约暂时关闭！</small>
+                        <i class="iconfont icon-shezhi"></i>账户设置
                     </div>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a id="btn-new-reservation" href="#"><i class="iconfont icon-plus"></i>新增预约</a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#"><i class="iconfont icon-tianjiashangjia"></i>邀请会员加入</a>
-                        </li>
-                    </ul>
-                    <div style="clear:both"></div>
                 </div>
                 <div class="content-box">
-                    <div class="content-box-inner">
-                        <ul class="nav nav-tabs nav-tabs-b">
-                            <li><a href="#">数据导入</a>
+                    <div class="content-box-inner two-step-validate step-2">
+                        <ul class="nav nav-tabs nav-tabs-a">
+                            <li><a href="#">基本设置</a>
                             </li>
-                            <li class="active"><a href="#">逐条导入</a>
+                            <li class="active"><a href="#">两步验证</a>
+                            </li>
+                            <li><a href="#">安全日志</a>
                             </li>
                         </ul>
-                        <div id="import-single" class="form-inline import-single">
-                            <div class="form-group">
-                                <label class="" for="name">姓名：</label>
-                                <input type="text" class="form-control" id="name" placeholder="">
+                        <div class="indicator">
+                            <div class="track enabled"></div>
+                            <div class="track disabled"></div>
+                            <div class="node node-1 enabled">
+                                <p>安装身份验证码</p>
+                                <div class="step ">
+                                    1
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label class="" for="mobile">手机号码：</label>
-                                <input type="text" class="form-control" id="mobile" placeholder="">
+                            <div class="node node-2 enabled">
+                                <p>添加账户</p>
+                                <div class="step">
+                                    2
+                                </div>
                             </div>
-                            <div class="form-group add-more">
-                                <label class="more"><a class="btn btn-link"><i class="iconfont icon-plus"></i>增加更多</a>
-                                </label>
+                            <div class="node node-3 disabled">
+                                <p>验证并开启</p>
+                                <div class="step">
+                                    3
+                                </div>
                             </div>
-                            <div class="block">
-                                <div class="col-sm-10">
-                                    <button type="submit" class="btn btn-warning">确定增加</button>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-7">
+                                    <img src="images/validate_02.jpg" />
+                                </div>
+                                <div class="col-xs-5">
+                                    <p>在身份验证器里添加账户</p>
+                                    <p>打开身份验证器应用，扫描条形码添加账户</p>
+                                    <div class="media">
+                                        <div class="media-left media-top">
+                                            <a href="#">
+                                                <img class="media-object" src="images/qr_02.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="bg-info">
+                                                <p><i class="iconfont icon-info"></i>身份验证器不能扫描验证码？手动添加以下账号：</p>
+                                                <p>
+                                                    <label>账户:</label>xxxxxxxxx
+                                                </p>
+                                                <p>
+                                                    <label>密钥:</label>xxxxxxxxx
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="btn-nav">
+                                        <a href="#" class="btn btn-default pull-left"><i class="iconfont icon-zuosanjiao"></i>上一步</a>
+                                        <a href="#" class="btn btn-warning pull-right">下一步<i class="iconfont icon-yousanjiao"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -135,16 +166,6 @@
             </div>
         </div>
     </section>
-    <script type="text/add-more" id="tpl-add-more">
-        <div class="form-group">
-            <label class="" for="name">姓名：</label>
-            <input type="text" class="form-control" id="name" placeholder="">
-        </div>
-        <div class="form-group">
-            <label class="" for="mobile">手机号码：</label>
-            <input type="text" class="form-control" id="mobile" placeholder="">
-        </div>
-    </script>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
