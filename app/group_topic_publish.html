@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>07-账户设置-02两步验证-03开启流程</title>
+    <title>08-圈子管理-04发布</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -73,7 +73,7 @@
                     <li>
                         <a href="#"><i class="iconfont icon-weibiaoti5"></i>教练管理</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="#"><i class="iconfont icon-rili"></i>圈子管理</a>
                     </li>
                     <li>
@@ -82,7 +82,7 @@
                     <li>
                         <a href="#"><i class="iconfont icon-baobiao"></i>统计报表</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="#"><i class="iconfont icon-shezhi"></i>账户设置</a>
                     </li>
                 </ul>
@@ -92,75 +92,49 @@
             <div class="col-main-inner">
                 <div class="toolbar-top">
                     <div class="title">
-                        <i class="iconfont icon-shezhi"></i>账户设置
+                        <i class="iconfont icon-kecheng"></i>圈子管理
                     </div>
                 </div>
+                <div class="content-nav pull-left">
+                    <ul class="nav nav-stacked">
+                        <li class="active"><a href="#">圈 子</a>
+                        </li>
+                        <li><a href="#">俱乐部活动</a>
+                        </li>
+                    </ul>
+                </div>
                 <div class="content-box">
-                    <div class="content-box-inner two-step-validate step-1">
-                        <ul class="nav nav-tabs nav-tabs-a">
-                            <li><a href="#">基本设置</a>
-                            </li>
-                            <li class="active"><a href="#">两步验证</a>
-                            </li>
-                            <li><a href="#">安全日志</a>
-                            </li>
-                        </ul>
-                        <div class="indicator">
-                            <div class="track disabled"></div>
-                            <div class="track disabled"></div>
-                            <div class="node node-1 enabled">
-                                <p>安装身份验证码</p>
-                                <div class="step ">
-                                    1
-                                </div>
-                            </div>
-                            <div class="node node-2 disabled">
-                                <p>添加账户</p>
-                                <div class="step">
-                                    2
-                                </div>
-                            </div>
-                            <div class="node node-3 disabled">
-                                <p>验证并开启</p>
-                                <div class="step">
-                                    3
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xs-7">
-                                    <img src="images/validate_01.jpg" />
-                                </div>
-                                <div class="col-xs-5">
-                                    <p>在移动设备上安装身份验证器</p>
-                                    <p>Google身份验证器是谷歌开发的开源应用，可动态生成验证码，并且不会耗费手机流量</p>
-                                    <div class="media">
-                                        <div class="media-left media-middle">
-                                            <i class="iconfont icon-anzhuo"></i>
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading">Android 手机</h4>
-                                            <p>在各大应用市场搜索：身份验证器或者直接访问：<a href="">豌豆荚</a>
-                                            </p>
-                                        </div>
+                    <div class="content-box-inner">
+                        <div class="container container-group">
+                            <form class="form-horizontal form-size-a normal-label" id="">
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label">帖子类型：</label>
+                                    <div class="col-sm-4">
+                                        <select class="form-control">
+                                        	<option>时间段</option>
+                                        </select>
                                     </div>
-                                    <div class="media">
-                                        <div class="media-left media-middle">
-                                            <i class="iconfont icon-pingguo"></i>
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading">iPhone 手机</h4>
-                                            <p>在AppStore搜索：Google Authenticator</p>
-                                        </div>
-                                    </div>
-                                    <div class="btn-nav">
-                                        <a href="#" class="btn btn-default pull-left"><i class="iconfont icon-zuosanjiao"></i>上一步</a>
-                                        <a href="#" class="btn btn-warning pull-right">下一步<i class="iconfont icon-yousanjiao"></i></a>
-                                    </div>
-
                                 </div>
-                            </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label">帖子内容：</label>
+                                    <div class="col-sm-6">
+                                    	<textarea class="form-control" rows="5"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label">上传照片：</label>
+                                    <div class="col-sm-4">
+                                        <button class="btn btn-custom-c">点击上传</button>
+                                        <button class="btn btn-custom-c">查看照片</button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label sr-only"></label>
+                                    <div class="col-sm-2 col-btn">
+                                        <button type="submit" class="btn btn-block btn-warning">发布活动</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -178,6 +152,7 @@
     <!-- endbower -->
     <script src="bower_components/art-dialog/dist/dialog.js"></script>
     <script src="bower_components/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="bower_components/fullcalendar/dist/lang/zh-cn.js"></script>
     <!-- endbuild -->
 
     <!-- build:js({app,.tmp}) scripts/main.js -->

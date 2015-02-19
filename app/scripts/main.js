@@ -176,11 +176,15 @@
         });
         //切换成月视图
         $('#btn-month-view').on('click', function() {
+            $(this).addClass('active');
+            $('#btn-week-view').removeClass('active');
             $('#reservation-calendar').fullCalendar('changeView', 'month');
             $('.reservation-calendar-control').find('.calendar-title').text($('#reservation-calendar').fullCalendar('getView').title);
         });
         //切换成星期视图
         $('#btn-week-view').on('click', function() {
+            $(this).addClass('active');
+            $('#btn-month-view').removeClass('active');
             $('#reservation-calendar').fullCalendar('changeView', 'basicWeek');
             $('.reservation-calendar-control').find('.calendar-title').text($('#reservation-calendar').fullCalendar('getView').title);
         });

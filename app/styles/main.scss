@@ -44,7 +44,7 @@ a, .btn-link {
     z-index: 100;
 }
 .btn-warning {
-    background-color: #e39300;
+    @include button-variant(#ffffff, #e39300, #e39300);
 }
 .btn-black {
     background-color: #2c2c2c;
@@ -56,11 +56,17 @@ a, .btn-link {
         color: darken(#fff, 15%);
     }
 }
+//背景白色，字体橙色
 .btn-custom-a {
     @include button-variant(#e39300, #fafafa, #c8c8c8);
 }
+//背景灰色，字体白色
 .btn-custom-b {
     @include button-variant(#ffffff, #ababab, #ababab);
+}
+//背景淡灰色，字体黑色
+.btn-custom-c {
+    @include button-variant(#333333, #eeeeee, #c8c8c8);
 }
 .btn-link-custom-a {
     color: #e39300;
@@ -1156,6 +1162,9 @@ header {
             background-color: transparent;
             padding: 5px 20px;
         }
+        .icon-anzhuo, .icon-pingguo {
+            font-size: 48px;
+        }
     }
     &.step-2 {
         .media {
@@ -1179,6 +1188,114 @@ header {
         }
         .col-xs-5 {
             margin-top: 70px;
+        }
+    }
+}
+/*
+**--------------------------
+** 圈子管理样式
+**-------------------------- 
+*/
+
+.container-group {
+    width: 100%;
+    margin-left: 0px;
+    > .row {
+        .col-xs-4 {
+            width: 200px;
+            margin-bottom: 10px;
+        }
+    }
+    table {
+        font-size: $font-size-small;
+        margin-top: 20px;
+        border-top: 1px solid $border-color;
+        &.table-activity-list {
+            margin-top: 0;
+            caption {
+                border-top: none !important;
+                padding-top: 0px;
+                .checkbox {
+                    label {
+                        span {
+                            position: relative;
+                            top: -2px;
+                        }
+                    }
+                }
+            }
+            .checkbox {
+                color: #999999;
+                label {
+                    span {
+                        position: relative;
+                        top: 3px;
+                    }
+                }
+            }
+        }
+        td {
+            border-top: none !important;
+            border-bottom: 1px dotted #c7c7c6 !important;
+        }
+        caption {
+            padding: 20px 10px;
+            border-top: 1px solid $border-color;
+            .checkbox {
+                margin-right: 20px;
+                label {
+                    span {
+                        position: relative;
+                        top: -2px;
+                    }
+                }
+            }
+        }
+        p {
+            color: #666666;
+            margin: 0;
+        }
+        h5 {
+            font-size: $font-size-small;
+            small {
+                margin-left: 30px;
+            }
+        }
+        .publish-date {
+            color: #999999;
+        }
+        .row {
+            &.thumbnail-list {
+                margin-left: -6px;
+                margin-right: -6px;
+                margin-top: 10px;
+                > .col-xs-4 {
+                    padding-left: 6px;
+                    padding-right: 6px;
+                }
+                .thumbnail {
+                    padding: 0;
+                    background-color: transparent;
+                    border: none;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        .icon-zan, .icon-pinglun {
+            margin-right: 3px;
+            color: #e39300;
+        }
+        .num {
+            margin-right: 10px;
+        }
+        .avatar-list {
+            i, a {
+                margin-right: 10px;
+            }
+            white-space: nowrap;
+        }
+        .btn-action-group {
+            padding: 20px 0 50px;
         }
     }
 }
