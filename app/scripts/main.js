@@ -441,7 +441,7 @@
             });
         });
 
-        $('#form-add-coach #btn-select-course').on('click', function(e){
+        $('#form-add-coach #btn-select-course').on('click', function(e) {
             e.preventDefault();
             var d = dialog({
                 title: '选择课程',
@@ -453,7 +453,7 @@
         });
 
         //微体验列表页面删除确认框
-        $('.table-weitiyan-list .btn-delete').on('click', function(e){
+        $('.table-weitiyan-list .btn-delete').on('click', function(e) {
             var d = dialog({
                 title: '确认删除',
                 content: '确认删除该条信息',
@@ -465,22 +465,22 @@
             d.show(this).width(300);
         });
         //微体验列表页面，二维码显示
-        $('.table-weitiyan-list .show-qr').on('click', function(e){
+        $('.table-weitiyan-list .show-qr').on('click', function(e) {
             var d = dialog({
                 content: '<img src="images/qr_01.jpg" />',
                 skin: 'skin-popup',
                 align: 'bottom',
-                quickClose: true, 
+                quickClose: true,
             });
             d.show(this).width(133);
         });
 
         //文件上传按钮美化
-        $('[role="file"]').on('click', function(){
+        $('[role="file"]').on('click', function() {
             var _this = this;
             var toggleTarget = $('#' + $(this).attr("data-toggle"));
-            toggleTarget.on('change', function(){
-                if($(this).val()) {
+            toggleTarget.on('change', function() {
+                if ($(this).val()) {
                     $(_this).val($(this).val());
                 }
             });
@@ -492,6 +492,49 @@
             minView: 2,
             format: 'yyyy-mm-dd',
             autoclose: true
+        });
+
+        //统计报表的chart插件，具体使用请查看插件网站：http://www.highcharts.com/
+        //会员进店数据图表
+        $('#chart-member-data').highcharts({
+            title: {
+                text: '',
+                x: -20 //center
+            },
+            subtitle: {
+                text: '',
+                x: -20
+            },
+            xAxis: {
+                gridLineWidth: 1,
+
+                categories: ['2014/11/28', '2014/11/29', '2014/11/28', '2014/11/28', '2014/11/28']
+            },
+            yAxis: {
+                title: {
+                    text: '人数'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 3,
+                    color: '#E3E3E3'
+                }],
+                min: 0,
+                lineWidth: 3
+            },
+            tooltip: {
+                valueSuffix: '人'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [{
+                name: '会员',
+                data: [0, 6, 9., 14, 18]
+            }]
         });
     });
 })(jQuery);

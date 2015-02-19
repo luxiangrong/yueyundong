@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>08-圈子管理-04发布</title>
+    <title>06-统计报表-03年龄分布图</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -73,13 +73,13 @@
                     <li>
                         <a href="#"><i class="iconfont icon-weibiaoti5"></i>教练管理</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="#"><i class="iconfont icon-rili"></i>圈子管理</a>
                     </li>
                     <li>
                         <a href="#"><i class="iconfont icon-tiyanfuwu"></i>微体验</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="#"><i class="iconfont icon-baobiao"></i>统计报表</a>
                     </li>
                     <li>
@@ -92,50 +92,38 @@
             <div class="col-main-inner">
                 <div class="toolbar-top">
                     <div class="title">
-                        <i class="iconfont icon-kecheng"></i>圈子管理
+                        <i class="iconfont icon-baobiao"></i>统计报表
                     </div>
-                </div>
-                <div class="content-nav pull-left">
-                    <ul class="nav nav-stacked">
-                        <li class="active"><a href="#">圈 子</a>
-                        </li>
-                        <li><a href="#">俱乐部活动</a>
-                        </li>
-                    </ul>
                 </div>
                 <div class="content-box">
                     <div class="content-box-inner">
-                        <div class="container container-group">
-                            <form class="form-horizontal form-size-a normal-label" id="">
-                                <div class="form-group">
-                                    <label for="" class="col-sm-2 control-label">帖子类型：</label>
-                                    <div class="col-sm-4">
-                                        <select class="form-control">
-                                        	<option>时间段</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="" class="col-sm-2 control-label">帖子内容：</label>
-                                    <div class="col-sm-6">
-                                    	<textarea class="form-control" rows="5"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="" class="col-sm-2 control-label">上传照片：</label>
-                                    <div class="col-sm-4">
-                                        <button class="btn btn-custom-c">点击上传</button>
-                                        <button class="btn btn-custom-c">查看照片</button>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label sr-only"></label>
-                                    <div class="col-sm-2 col-btn">
-                                        <button type="submit" class="btn btn-block btn-warning">发布活动</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                        <ul class="nav nav-tabs nav-tabs-a">
+                            <li><a href="#">会员进店趋势图</a>
+                            </li>
+                            <li><a href="#">性别对比图</a>
+                            </li>
+                            <li class="active"><a href="#">年龄分布图</a>
+                            </li>
+                            <li><a href="#">健身频次数</a>
+                            </li>
+                        </ul>
+                        <ul class="chart-age-data" id="chart-age-data">
+                            <li>
+                                <strong style="width: 2%"></strong><span>10-19岁  （2.38%）</span>
+                            </li>
+                            <li>
+                                <strong style="width: 32%"></strong><span>10-19岁  （2.38%）</span>
+                            </li>
+                            <li>
+                                <strong style="width: 28%"></strong><span>10-19岁  （2.38%）</span>
+                            </li>
+                            <li>
+                                <strong style="width: 20%"></strong><span>10-19岁  （2.38%）</span>
+                            </li>
+                            <li>
+                                <strong style="width: 14%"></strong><span>10-19岁  （2.38%）</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -155,7 +143,6 @@
     <!-- endbower -->
     <script src="bower_components/art-dialog/dist/dialog.js"></script>
     <script src="bower_components/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
-    <script src="bower_components/fullcalendar/dist/lang/zh-cn.js"></script>
     <!-- endbuild -->
 
     <!-- build:js({app,.tmp}) scripts/main.js -->
