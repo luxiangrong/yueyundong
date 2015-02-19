@@ -68,6 +68,14 @@ a, .btn-link {
 .btn-custom-c {
     @include button-variant(#333333, #eeeeee, #c8c8c8);
 }
+//背景黄色，字体白色
+.btn-custom-d {
+    @include button-variant(#ffffff, #f09b00, #ffffff);
+}
+//背景暗黄色，字体白色
+.btn-custom-e {
+    @include button-variant(#ffffff, #d48900, #ffaf1d);
+}
 .btn-link-custom-a {
     color: #e39300;
     &:hover, &:focus {
@@ -1326,7 +1334,6 @@ ul {
         }
     }
 }
-
 .chart-member-age {
     width: 1020px !important;
     margin-left: 0;
@@ -1368,8 +1375,85 @@ ul {
     }
     .fg {
         position: absolute;
-        top: 64px; 
+        top: 64px;
         height: 48px;
         overflow: hidden;
+    }
+}
+/*
+**--------------------------
+** 登录页面
+**-------------------------- 
+*/
+
+.bg-home {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    z-index: 1;
+}
+.container-home{
+    z-index: 2;
+    width: 1200px;
+    position: relative;
+    padding-top: 110px;
+    a {
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    .col-left {
+        text-align: right;
+        a {
+            margin-top: 162px;
+            display: block;
+        }
+    }
+    .col-right {
+        text-align: left;
+        a {
+            margin-bottom: 40px;
+            display: block;
+        }
+
+    }
+    .col-center {
+        text-align: center;
+        p {
+            margin: 20px 0;
+        }
+    }
+}
+
+/*
+**--------------------------
+** 首次登陆引导页面
+**-------------------------- 
+*/
+.dialog-guide {
+    width: 555px;
+    height: 578px;
+    background: url(../images/bg_guide.png) no-repeat center center;
+    padding-top: 140px;
+    text-align: center;
+    h3 {
+        font-size: $font-size-large;
+        font-weight: bold;
+        line-height: 1.8;
+    }
+    h4 {
+        margin-top: 70px;
+    }
+    p {
+        margin-top: 60px;
+        line-height: 2.2;
+        font-size: $font-size-small;
+        color: #ffdc9b;
+        a {
+            font-size: $font-size-base;
+        }
     }
 }

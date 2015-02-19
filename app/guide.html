@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>03-课程管理-01首页</title>
+    <title>00-管理首页-07首页-01</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -67,7 +67,7 @@
                     <li>
                         <a href="member_index.html"><i class="iconfont icon-huiyuan2"></i>会员管理</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="course_index.html"><i class="iconfont icon-kecheng"></i>课程管理</a>
                     </li>
                     <li>
@@ -92,46 +92,33 @@
             <div class="col-main-inner">
                 <div class="toolbar-top">
                     <div class="title">
-                        <i class="iconfont icon-kecheng"></i>课程管理
+                        <i class="iconfont icon-shouye"></i>管理首页
                     </div>
-                    <div class="title-center course-calendar-control">
-                        <button id="btn-prev" class="btn"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                        </button>
-                        <strong class="calendar-title">2014年五月</strong>
-                        <button id="btn-next" class="btn"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                        </button>
-                    </div>
-
-                    <div class="pull-right course-calendar-view-switch">
-                        <button class="btn btn-warning" id="btn-add-course">增加课程</button>
-                        <div class="btn-group" data-toggle="buttons">
-                            <button class="btn btn-default active" id="btn-month-view">
-                                <input type="radio" name="calendar_view" autocomplete="off" checked>月
-                            </button>
-                            <button class="btn btn-default" id="btn-week-view">
-                                <input type="radio" name="calendar_view" autocomplete="off">周
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="content-nav pull-left">
-                    <ul class="nav nav-stacked">
-                        <li class="active"><a href="#">日 历</a>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a id="btn-new-reservation" href="#"><i class="iconfont icon-plus"></i>新增预约</a>
                         </li>
-                        <li><a href="#">列表</a>
+                        <li class="dropdown">
+                            <a href="#"><i class="iconfont icon-tianjiashangjia"></i>邀请会员加入</a>
                         </li>
                     </ul>
-                </div>
-                <div class="content-box">
-
-                    <div class="content-box-inner">
-
-                        <div id='course-calendar'></div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="dialog-guide" id="dialog-guide">
+        <h3>使会员能够通过手机 预约课程 和 自动签到<br/>请 导入/添加 用户信息</h3>
+        <h4>
+            <button class="btn btn-custom-d"><i class="iconfont icon-iconhuiyuanzhongxin"></i>批量导入</button>
+            <button class="btn btn-custom-e"><i class="iconfont icon-plus"></i>逐条增加</button>
+        </h4>
+        <p>
+            <a href="">跳过</a><br/>
+            安全承诺：我们绝不泄露会员数据，保护用户隐私！
+        </p>
+    </div>
+
+
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -147,11 +134,22 @@
     <!-- endbower -->
     <script src="bower_components/art-dialog/dist/dialog.js"></script>
     <script src="bower_components/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
-    <script src="bower_components/fullcalendar/dist/lang/zh-cn.js"></script>
     <!-- endbuild -->
 
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="scripts/main.js"></script>
+    <script type="text/javascript">
+    (function($) {
+        $(document).ready(function() {
+            var d = dialog({
+                content: $('#dialog-guide'),
+                padding: 0,
+                skin: 'skin-processing'
+            });
+            d.showModal();
+        });
+    })(jQuery);
+    </script>
     <!-- endbuild -->
 </body>
 
