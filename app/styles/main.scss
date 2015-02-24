@@ -936,6 +936,24 @@ header {
         font-weight: normal;
     }
 }
+
+.analysis-summary {
+    margin-bottom: 20px;
+    .text-muted {
+        color: #666666;
+        margin-right: 30px;
+    }
+}
+
+.member-analysis {
+    .analysis-log {
+        border-top: 1px solid $border-color;
+        margin-top: 20px;
+        padding-top: 20px;
+    }
+}
+
+
 /*
 **--------------------------
 ** 课程管理页面样式 

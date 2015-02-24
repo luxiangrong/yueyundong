@@ -1,0 +1,283 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <title>02-会员管理-06统计分析</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/smalot-bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css" />
+    <!-- endbower -->
+    <link rel="stylesheet" href="bower_components/art-dialog/css/ui-dialog.css">
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+
+</head>
+
+<body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <header id="header">
+        <nav class="navbar navbar-default ">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"><img src="images/logo.png" />
+                    </a>
+                </div>
+                <div class="navbar-text member-count">
+                    <span>会员：<strong>15369</strong>名</span>
+                    <span>教练：<strong>15369</strong>名</span>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <p class="navbar-text">今天是 星期二，2014年05月27日</p>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="#">张三</a>
+                    </li>
+                    <li><a href="#">退出</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="content" class="wrap-all">
+        <div class="col-side">
+            <nav id="side-menu">
+                <ul class="nav">
+                    <li>
+                        <a href="index_1.html"><i class="iconfont icon-shouye"></i>管理首页</a>
+                    </li>
+                    <li>
+                        <a href="calendar_index.html"><i class="iconfont icon-rili"></i>预约日历</a>
+                    </li>
+                    <li class="active">
+                        <a href="member_index.html"><i class="iconfont icon-huiyuan2"></i>会员管理</a>
+                    </li>
+                    <li>
+                        <a href="course_index.html"><i class="iconfont icon-kecheng"></i>课程管理</a>
+                    </li>
+                    <li>
+                        <a href="coach_list.html"><i class="iconfont icon-weibiaoti5"></i>教练管理</a>
+                    </li>
+                    <li>
+                        <a href="group_index.html"><i class="iconfont icon-rili"></i>圈子管理</a>
+                    </li>
+                    <li>
+                        <a href="weitiyan_index.html"><i class="iconfont icon-tiyanfuwu"></i>微体验</a>
+                    </li>
+                    <li>
+                        <a href="report_1.html"><i class="iconfont icon-baobiao"></i>统计报表</a>
+                    </li>
+                    <li>
+                        <a href="settings_index.html"><i class="iconfont icon-shezhi"></i>账户设置</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-main">
+            <div class="col-main-inner">
+                <div class="toolbar-top">
+                    <div class="title">
+                        <i class="iconfont icon-huiyuan2"></i>统计分析
+                    </div>
+                </div>
+                <div class="content-box">
+                    <div class="content-box-inner member-analysis">
+                        <div class="row">
+                            <div class="col-xs-12 analysis-summary">
+                                每次健身的平均时长：<span class="text-muted">1小时30分</span> 2014-10-12日锻炼时长：
+                                <span class="text-muted">1小时30分</span> 2014-10月进馆次数最多：
+                                <span class="text-muted">25</span> 本月预约：
+                                <span class="text-muted">20</span> 总预约：
+                                <span class="text-muted">20</span>
+                            </div>
+                            <div class="col-xs-6">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 33.33%; text-align: center;">1年</th>
+                                            <th style="width: 33.33%; text-align: center;">季度</th>
+                                            <th style="width: 33.33%; text-align: center;">1月</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="3">
+                                                <div id="chart-member-exercise-times"></div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-xs-6">
+                                <div id="chart-member-exercise-period"></div>
+                            </div>
+                        </div>
+                        <div class="row analysis-log">
+                            <div class="col-xs-12">
+                                <table class="table table-no-border">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 15em;">2012-11-15</td>
+                                            <td style="width: 5em;"> 预约</td>
+                                            <td style="width: 10em;"> 李欣</td>
+                                            <td style="width: 15em;"> 普 提课程</td>
+                                            <td style="width: 15em;"> 2014-12-20 9:00 - 10:00</td>
+                                            <td style="width: 5em;"> 预约号</td>
+                                            <td style="width: 15em;"> 14121210001</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2012-11-15</td>
+                                            <td> 预约</td>
+                                            <td> 李欣</td>
+                                            <td> 普 提课程</td>
+                                            <td> 2014-12-20 9:00 - 10:00</td>
+                                            <td> 预约号</td>
+                                            <td> 14121210001</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2012-11-15</td>
+                                            <td> 预约</td>
+                                            <td> 李欣</td>
+                                            <td> 普 提课程</td>
+                                            <td> 2014-12-20 9:00 - 10:00</td>
+                                            <td> 预约号</td>
+                                            <td> 14121210001</td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/respondJS/dest/respond.src.js"></script>
+    <script src="bower_components/smalot-bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/fullcalendar/dist/fullcalendar.js"></script>
+    <script src="bower_components/highcharts/highcharts.js"></script>
+    <script src="bower_components/highcharts/highcharts-more.js"></script>
+    <script src="bower_components/highcharts/modules/exporting.js"></script>
+    <!-- endbower -->
+    <script src="bower_components/art-dialog/dist/dialog.js"></script>
+    <script src="bower_components/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+
+    <!-- endbuild -->
+    <script type="text/javascript">
+    $(function() {
+
+        $(document).ready(function() {
+
+            $('#chart-member-exercise-times').highcharts({
+                title: {
+                    text: '锻炼次数趋势图',
+                    x: -20 //center
+                },
+                subtitle: {
+                    text: '',
+                    x: -20
+                },
+                xAxis: {
+                    gridLineWidth: 1,
+                    categories: ['1', '2', '3', '4', '5', '6', '7']
+                },
+                yAxis: {
+                    title: {
+                        text: '人数'
+                    },
+                    plotLines: [{
+                        value: 0,
+                        width: 3,
+                        color: '#E3E3E3'
+                    }],
+                    min: 0,
+                    lineWidth: 3
+                },
+                tooltip: {
+                    valueSuffix: '人'
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'center',
+                    verticalAlign: 'middle',
+                    borderWidth: 0
+                },
+                series: [{
+                    name: '会员',
+                    data: [10, 16, 12, 14, 11, 12, 13]
+                }]
+            });
+
+            // Build the chart
+            $('#chart-member-exercise-period').highcharts({
+                chart: {
+                    backgroundColor: '#f5f5f5',
+                    borderColor: '#bababa',
+                    borderWidth: 1,
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false
+                },
+                title: {
+                    text: '锻炼时段统计图'
+                },
+                tooltip: {
+                    pointFormat: '<b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: false
+                        },
+                        showInLegend: true
+                    }
+                },
+                series: [{
+                    type: 'pie',
+                    name: '',
+                    data: [
+                        ['17-18点', 50],
+                        ['13-14点', 13],
+                        ['9-10点', 12],
+                        ['其他', 25],
+                    ]
+                }]
+            });
+        });
+
+    });
+    </script>
+
+</body>
+
+</html>

@@ -376,8 +376,23 @@ module.exports = function (grunt) {
         'imagemin',
         'svgmin'
       ]
+    },
+
+    'ftp-deploy': {
+      build: {
+        auth: {
+          host: 'tfr256720.soso.bj.cn',
+          port: 21,
+          authKey: 'tfr256720'
+        },
+        src: 'dist',
+        dest: '/yydb',
+        exclusions: []
+      }
     }
   });
+
+  
 
 
   grunt.registerTask('serve', 'start the server and preview your app, --allow-remote for remote access', function (target) {
@@ -438,5 +453,10 @@ module.exports = function (grunt) {
     'newer:jshint',
     'test',
     'build'
+  ]);
+
+  grunt.registerTask('deploy',[
+    'build',
+    'ftp-deploy'
   ]);
 };
