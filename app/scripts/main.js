@@ -470,7 +470,7 @@
                 content: '<img src="images/qr_01.jpg" />',
                 skin: 'skin-popup',
                 align: 'bottom',
-                quickClose: true,
+                quickClose: true
             });
             d.show(this).width(133);
         });

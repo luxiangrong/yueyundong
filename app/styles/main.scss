@@ -262,9 +262,7 @@ header {
     }
     .navbar-nav {
         &.navbar-right {
-            &:last-child {
                 margin-right: 0;
-            }
         }
         > li {
             &:hover, &.active {
