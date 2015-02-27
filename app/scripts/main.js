@@ -72,7 +72,7 @@
          **--------------------------
          */
         $('#import-single').find('.add-more').on('click', function() {
-            $(this).before('<br/>' + $('#tpl-add-more')[0].innerHTML);
+            $(this).before($('#tpl-add-more')[0].innerHTML);
         });
 
         /*
@@ -162,7 +162,36 @@
                     allDay: false
                 }],
                 textColor: '#ffffff'
-            }]
+            }],
+            dayClick: function(date, jsEvent, view) {
+
+                // alert('Clicked on: ' + date.format());
+                // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+                // alert('Current view: ' + view.name);
+
+                $('#dialog-new-reservation').find('.datetimepicker').datetimepicker({
+                    language: 'zh-CN'
+                });
+
+                var d = dialog({
+                    title: '新建预约',
+                    content: $('#dialog-new-reservation').clone(),
+                    quickClose: false, // 点击空白处快速关闭
+                    skin: 'skin-popup',
+                    button: [{
+                        value: '确定',
+                        callback: function() {
+                            return false;
+                        },
+                        autofocus: true
+                    }, {
+                        value: '取消',
+                        callback: function() {}
+                    }]
+                });
+                d.show(jsEvent);
+
+            }
         });
         //显示上一个月
         $('.reservation-calendar-control').find('#btn-prev').on('click', function() {

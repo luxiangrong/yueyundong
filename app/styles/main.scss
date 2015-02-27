@@ -51,9 +51,9 @@ a, .btn-link {
     border-color: lighter(#2c2c2c, 5%);
     color: #fff;
     &:hover, &.action {
-        background-color: lighter(#2c2c2c, 15%);
-        border-color: lighter(#2c2c2c, 25%);
-        color: darken(#fff, 15%);
+        background-color: #e39300;
+        border-color: #e39300;
+        color: #ffffff;
     }
 }
 //背景白色，字体橙色
@@ -260,21 +260,26 @@ header {
             font-size: $font-size-large;
         }
     }
+    .btn-wrap {
+        &.pull-right {
+            margin-right: 20px;
+        }
+    }
     .navbar-nav {
         &.navbar-right {
-                margin-right: 0;
+            margin-right: 0;
         }
         > li {
             &:hover, &.active {
                 > a {
-                    color: lighten($toolbar-color, 15%);
+                    color: lighten(#7e7e7e, 15%);
                     &.btn-slide-close {
                         background: $main-bg;
                     }
                 }
             }
             > a {
-                color: $toolbar-color;
+                color: #7e7e7e;
                 padding-top: 22px;
                 padding-bottom: 22px;
             }
@@ -420,6 +425,7 @@ header {
         display: inline-block;
         text-align: center;
         vertical-align: top;
+        margin-right: 100px;
         h4 {
             font-size: ceil(($font-size-base * 1.14));
         }
@@ -730,6 +736,29 @@ header {
             font-size: $font-size-base;
             .iconfont {
                 color: #1c86cf;
+                font-size: $font-size-base;
+                margin-right: 5px;
+            }
+        }
+        .navbar-nav {
+            > li {
+                &:hover, &.active {
+                    > a {
+                        color: lighten(#666666, 15%);
+                        .iconfont {
+                            color: lighten(#8c8c8c, 15%);
+                        }
+                    }
+                }
+                > a {
+                    color: #666666;
+                    padding-top: 22px;
+                    padding-bottom: 22px;
+                    .iconfont {
+                        color: #8c8c8c;
+                        font-size: 12px;
+                    }
+                }
             }
         }
     }
@@ -880,6 +909,13 @@ header {
     }
     font-size: $font-size-small;
 }
+
+.form-search {
+    .form-control {
+        background-color: transparent;
+    }
+}
+
 .slide-box-edit-member, .action-old-member {
     .form-group {
         // font-size: $font-size-small;
@@ -934,7 +970,6 @@ header {
         font-weight: normal;
     }
 }
-
 .analysis-summary {
     margin-bottom: 20px;
     .text-muted {
@@ -942,7 +977,6 @@ header {
         margin-right: 30px;
     }
 }
-
 .member-analysis {
     .analysis-log {
         border-top: 1px solid $border-color;
@@ -950,8 +984,6 @@ header {
         padding-top: 20px;
     }
 }
-
-
 /*
 **--------------------------
 ** 课程管理页面样式 
@@ -1411,7 +1443,7 @@ ul {
     top: 0px;
     z-index: 1;
 }
-.container-home{
+.container-home {
     z-index: 2;
     width: 1200px;
     position: relative;
@@ -1434,7 +1466,6 @@ ul {
             margin-bottom: 40px;
             display: block;
         }
-
     }
     .col-center {
         text-align: center;
@@ -1443,12 +1474,12 @@ ul {
         }
     }
 }
-
 /*
 **--------------------------
 ** 首次登陆引导页面
 **-------------------------- 
 */
+
 .dialog-guide {
     width: 555px;
     height: 578px;
@@ -1470,6 +1501,19 @@ ul {
         color: #ffdc9b;
         a {
             font-size: $font-size-base;
+        }
+    }
+}
+
+/*
+**--------------------------
+** 日历样式
+**-------------------------- 
+*/
+.fc-week {
+    .fc-day {
+        &:hover {
+            background-color: #ebebeb;
         }
     }
 }
