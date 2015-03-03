@@ -1,6 +1,15 @@
 'use strict';
 (function($) {
     $(document).ready(function() {
+        $(window).load(function(){
+            $(".content-box").mCustomScrollbar({
+                axis:"y",
+                theme:"dark",
+                scrollInertia: 0
+            });
+        });
+
+
         /*计算内容框的高度，适应浏览器高度变化*/
         function calcContentBox() {
             var colMainHeight = $('.col-main').height();
