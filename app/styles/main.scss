@@ -1121,6 +1121,9 @@ header {
     fieldset {
         border-bottom: 1px dotted $border-color;
         padding: 20px 0 10px;
+        &.no-border {
+            border-bottom: none;
+        }
         .help-block {
             color: #999;
         }

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>04-教练管理-02增加教练</title>
+    <title>04-教练管理-03教练日历</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -68,10 +68,10 @@
                     <li>
                         <a href="member_index.html"><i class="iconfont icon-huiyuan2"></i>会员管理</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="course_index.html"><i class="iconfont icon-kecheng"></i>课程管理</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="coach_list.html"><i class="iconfont icon-weibiaoti5"></i>教练管理</a>
                     </li>
                     <li>
@@ -95,99 +95,31 @@
                     <div class="title">
                         <i class="iconfont icon-weibiaoti5"></i>教练管理
                     </div>
+                    <div class="title-center coach-calendar-control">
+                        <button id="btn-prev" class="btn"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        </button>
+                        <strong class="calendar-title">2014年五月</strong>
+                        <button id="btn-next" class="btn"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        </button>
+                    </div>
                 </div>
                 <div class="content-nav pull-left">
                     <ul class="nav nav-stacked">
-                        <li><a href="#">教练日历</a>
+                        <li class="active"><a href="#">教练日历</a>
                         </li>
-                        <li class="active"><a href="#">教练列表</a>
+                        <li><a href="#">教练列表</a>
                         </li>
                     </ul>
                 </div>
                 <div class="content-box">
+
                     <div class="content-box-inner">
-                        <form id="form-add-coach" class="form-horizontal form-size-a normal-label form-add-coach">
-                            <div class="form-group">
-                                <label for="control-1" class="col-sm-2 control-label">教练姓名：</label>
-                                <div class="col-sm-3">
-                                    <input type="text" class="form-control" id="control-1" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="control-2" class="col-sm-2 control-label">电话：</label>
-                                <div class="col-sm-3">
-                                    <input type="text" class="form-control" id="control-2" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="control-2" class="col-sm-2 control-label">性别：</label>
-                                <div class="col-sm-3">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> 男
-                                        </label>
-                                        <label>
-                                            <input type="checkbox"> 女
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="control-2" class="col-sm-2 control-label">教授课程：</label>
-                                <div class="col-sm-3">
-                                    <input type="text" class="form-control" id="control-2" />
-                                </div>
-                                <div class="col-sm-1">
-                                    <button class="btn btn-link" id="btn-select-course"><i class="iconfont icon-plus"></i>选择课程</button>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label sr-only"></label>
-                                <div class="col-sm-2">
-                                    <button type="submit" class="btn btn-block btn-warning">新增教练</button>
-                                </div>
-                            </div>
-                        </form>
+                        <div id='coach-calendar'></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <div id="dialog-add-course" class="dialog-add-course trigger-by-add-coach">
-        <div class="form-inline">
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox"> 李欣普拉提课程
-                </label>
-                时长：45分钟      课时：10节      服务人数：45       教练：美女
-            </div>
-            <br/>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox"> 李欣普拉提课程
-                </label>
-                时长：45分钟      课时：10节      服务人数：45       教练：美女
-            </div>
-            <br/>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox"> 李欣普拉提课程
-                </label>
-                时长：45分钟      课时：10节      服务人数：45       教练：美女
-            </div>
-            <br/>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox"> 李欣普拉提课程
-                </label>
-                时长：45分钟      课时：10节      服务人数：45       教练：美女
-            </div>
-        </div>
-        <p>
-            <a href="#"><i class="iconfont icon-plus"></i>增加课程</a>
-        </p>
-    </div>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->

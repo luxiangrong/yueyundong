@@ -229,6 +229,86 @@
 
         $('.reservation-calendar-control').find('.calendar-title').text($('#reservation-calendar').fullCalendar('getView').title);
 
+        /*
+         **--------------------------
+         ** 教练日历插件相关代码
+         **--------------------------
+         */
+         $('#coach-calendar').fullCalendar({
+            //控件部分已经自定义，这里不需要默认的头部控件
+            header: {
+                left: '',
+                center: '',
+                right: ''
+            },
+            //用于显示预约事件数据，具体使用方法参考文档：http://fullcalendar.io/docs/
+            eventSources: [{
+                events: [{
+                    title: '高温瑜伽课程',
+                    start: '2015-02-16',
+                    color: '#6dd749'
+                }, {
+                    title: '高温瑜伽是打发我课程',
+                    start: '2015-02-16',
+                    color: '#3ccf9d'
+                }, {
+                    title: '高温瑜伽啊搜房网课程',
+                    start: '2015-02-16',
+                    color: '#6dd749',
+                    allDay: false
+                }, {
+                    title: '高温瑜伽课程',
+                    start: '2015-02-19',
+                    color: '#6dd749'
+                }, {
+                    title: '高温瑜伽是打发我课程',
+                    start: '2015-02-19',
+                    color: '#3ccf9d'
+                }, {
+                    title: '高温瑜伽课程',
+                    start: '2015-02-21',
+                    color: '#6dd749'
+                }, {
+                    title: '高温瑜伽是打发我课程',
+                    start: '2015-02-21',
+                    color: '#3ccf9d'
+                }, {
+                    title: '高温瑜伽课程',
+                    start: '2015-02-26',
+                    color: '#6dd749'
+                }, {
+                    title: '高温瑜伽是打发我课程',
+                    start: '2015-02-27',
+                    color: '#3ccf9d'
+                }],
+                textColor: '#ffffff'
+            }]
+        });
+        //显示上一个月
+        $('.coach-calendar-control').find('#btn-prev').on('click', function() {
+            $('#coach-calendar').fullCalendar('prev');
+            $('.coach-calendar-control').find('.calendar-title').text($('#coach-calendar').fullCalendar('getView').title);
+        });
+        //显示上一个星期
+        $('.coach-calendar-control').find('#btn-next').on('click', function() {
+            $('#coach-calendar').fullCalendar('next');
+            $('.coach-calendar-control').find('.calendar-title').text($('#coach-calendar').fullCalendar('getView').title);
+        });
+        //切换成月视图
+        $('#btn-month-view').on('click', function() {
+            $('#coach-calendar').fullCalendar('changeView', 'month');
+            $('.coach-calendar-control').find('.calendar-title').text($('#coach-calendar').fullCalendar('getView').title);
+        });
+        //切换成星期视图
+        $('#btn-week-view').on('click', function() {
+            $('#coach-calendar').fullCalendar('changeView', 'basicWeek');
+            $('.coach-calendar-control').find('.calendar-title').text($('#coach-calendar').fullCalendar('getView').title);
+        });
+
+        $('.coach-calendar-control').find('.calendar-title').text($('#coach-calendar').fullCalendar('getView').title);
+
+
+
         //教练预约滑出框
         $('.coach-list li').on('click', function(e) {
             //找到相应的右侧滑出框，并打开它
