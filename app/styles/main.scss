@@ -771,6 +771,11 @@ header {
             padding: 20px 0;
             border-bottom: 1px dotted $border-color;
         }
+        h5 {
+            small {
+                margin-left: 10px;
+            }
+        }
     }
     dl {
         margin: 0;
@@ -806,7 +811,8 @@ header {
     table {
         margin-bottom: 0;
     }
-    &.slide-box-coach {
+    &.slide-box-coach,
+    &.slide-box-course {
         .bianji {
             > a {
                 color: #1c86cf;
@@ -817,6 +823,9 @@ header {
         }
         h4 {
             margin: 5px;
+            span {
+                margin-right: 30px;
+            }
         }
         .table-date {
             font-size: $font-size-small;

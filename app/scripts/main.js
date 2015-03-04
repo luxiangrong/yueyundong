@@ -487,7 +487,19 @@
                     color: '#3ccf9d'
                 }],
                 textColor: '#ffffff'
-            }]
+            }],
+            eventClick: function(calEvent, jsEvent, view) {
+
+                // alert('Event: ' + calEvent.title);
+                // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+                // alert('View: ' + view.name);
+
+                openSlideBox($('#slide-box-course'));
+
+                // change the border color just for fun
+                // $(this).css('border-color', 'red');
+
+            }
         });
         //显示上一个月
         $('.course-calendar-control').find('#btn-prev').on('click', function() {
